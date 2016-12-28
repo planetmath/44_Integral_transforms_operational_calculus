@@ -1,0 +1,74 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{DifferentiationOfLaplaceTransformWithRespectToParameter}
+\pmcreated{2014-03-09 12:52:11}
+\pmmodified{2014-03-09 12:52:11}
+\pmowner{pahio}{2872}
+\pmmodifier{pahio}{2872}
+\pmtitle{differentiation of Laplace transform with respect to parameter}
+\pmrecord{2}{88064}
+\pmprivacy{1}
+\pmauthor{pahio}{2872}
+\pmtype{Theorem}
+\pmclassification{msc}{44A10}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% need this for including graphics (\includegraphics)
+\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+
+% making logically defined graphics
+%\usepackage{xypic}
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+We use the curved \PMlinkescapetext{arrows to point} from the Laplace-transformed functions to the corresponding initial functions.\\
+
+If\, 
+$$f(t,x) \;\,\curvearrowleft\;\, F(s,x),$$
+then one can differentiate both functions with respect to the parametre $x$:
+\begin{align}
+f'_x(t,x)  \;\,\curvearrowleft\;\, F'_x(s,x)
+\end{align}
+(1) may be written also as 
+\begin{align}
+\mathcal{L}\{\frac{\partial}{\partial x}f(t,x)}\}
+\;=\; \frac{\partial}{\partial x}\mathcal{L}\{f(t,x)\}.
+\end{align}
+
+{\em Proof.}\, We differentiate partially both sides of the defining 
+equation
+$$F(s,x) \;:= \int_0^\infty e^{-st}f(t,x)\,dt,$$
+on the right hand side 
+\PMlinkname{under the integration sign}{differentiationundertheintegralsign}, getting
+\begin{align}
+F'_x(s,x) \;=\; \int_0^\infty e^{-st}f'_x(t,x)\,dx,
+\end{align}
+which means same as (1).\, Q.E.D.\\
+
+\textbf{Example.}\, If the rule
+$$\frac{s}{s^2\!-\!a^2} \;\,\curvearrowright\;\, \cosh{at}$$
+is differentiated with respect to $a$, the result is
+$$\frac{2as}{(s^2\!-\!a^2)^2}\;\,\curvearrowright
+\;\, t\,\sinh{at}.$$\\
+
+\begin{thebibliography}{9}
+\bibitem{K.V.}{\sc K. V\"ais\"al\"a:} {\em Laplace-muunnos}.\, Handout Nr. 163.\quad Teknillisen korkeakoulun ylioppilaskunta, Otaniemi, Finland (1968).
+\end{thebibliography}
+
+
+\end{document}

@@ -1,0 +1,76 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{RelativeOfExponentialIntegral}
+\pmcreated{2013-03-22 18:44:20}
+\pmmodified{2013-03-22 18:44:20}
+\pmowner{pahio}{2872}
+\pmmodifier{pahio}{2872}
+\pmtitle{relative of exponential integral}
+\pmrecord{12}{41511}
+\pmprivacy{1}
+\pmauthor{pahio}{2872}
+\pmtype{Example}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{44A10}
+\pmclassification{msc}{26A36}
+\pmrelated{SubstitutionNotation}
+\pmrelated{RelativeOfCosineIntegral}
+\pmrelated{IntegrationOfLaplaceTransformWithRespectToParameter}
+\pmrelated{IntegrationUnderIntegralSign}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+\newcommand{\sijoitus}[2]%
+{\operatornamewithlimits{\Big/}_{\!\!\!#1}^{\,#2}}
+\begin{document}
+Let $a$ and $b$ be positive numbers.\, We want to calculate the value of the improper integral
+\begin{align}
+\int_0^\infty\frac{e^{-ax}-e^{-bx}}{x}\,dx
+\end{align}
+related to the exponential integral.\\
+
+The value may be found e.g. by utilising the derivative of the integral
+$$I(y) \;:=\, \int_0^\infty e^{-xy}\!\cdot\!\frac{e^{-ax}-e^{-bx}}{x}\,dx$$
+which can be formed by \PMlinkname{differentiating under the integral sign}{DifferentiationUnderIntegralSign}:
+\begin{align*}
+I'(y) & \;=\; \int_0^\infty e^{-xy}(-x)\frac{e^{-ax}-e^{-bx}}{x}\,dx\\
+      & \;=\; \int_0^\infty\left(e^{-(y+b)x}-e^{-(y+a)x}\right)\,dx\\
+      & \;=\; \sijoitus{x=0}{\quad\infty}\!\left(\frac{e^{-(y+b)x}}{-(y\!+\!b)}-\frac{e^{-(y+a)x}}{-(y\!+\!a)}\right)\\
+      & \;=\; \frac{1}{y\!+\!b}-\frac{1}{y\!+\!a}
+\end{align*}
+Thus,
+$$I(y) \;=\; \ln(y\!+\!b)-\ln(y\!+\!a) \;=\; \ln\frac{y\!+\!b}{y\!+\!a},$$
+and the integral (1) has the value\, $\displaystyle I(0) = \ln\frac{b}{a}$.\\
+
+There is another method via Laplace transforms.\, By the table of Laplace transforms, we have
+$$\mathcal{L}\{e^{-at}-e^{-bt}\} \;=\; \frac{1}{s\!+\!a}-\frac{1}{s\!+\!b}$$
+and therefore
+$$\mathcal{L}\{\frac{e^{-at}-e^{-bt}}{t}\} \;=\; \int_s^\infty\left(\frac{1}{u\!+\!a}-\frac{1}{u\!+\!b}\right)\,du 
+\;=\; \sijoitus{u=s}{\quad\infty}\ln\frac{u\!+\!a}{u\!+\!b} \;=\; \ln\frac{s\!+\!b}{s\!+\!a},$$
+i.e.
+$$\int_0^\infty e^{-st}\!\cdot\!\frac{e^{-at}-e^{-bt}}{t}\,dt \;=\; \ln\frac{s\!+\!b}{s\!+\!a}.$$
+Letting\, $s \to 0+$,\, this yields the equation
+$$\int_0^\infty\frac{e^{-ax}-e^{-bx}}{x}\,dx \;=\; \ln\frac{b}{a}.$$
+
+%%%%%
+%%%%%
+\end{document}

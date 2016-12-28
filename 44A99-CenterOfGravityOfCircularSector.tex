@@ -1,0 +1,90 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{CenterOfGravityOfCircularSector}
+\pmcreated{2013-03-22 18:06:30}
+\pmmodified{2013-03-22 18:06:30}
+\pmowner{curious}{18562}
+\pmmodifier{curious}{18562}
+\pmtitle{center of gravity of circular sector}
+\pmrecord{6}{40653}
+\pmprivacy{1}
+\pmauthor{curious}{18562}
+\pmtype{Topic}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{44A99}
+\pmrelated{CentreOfMassOfHalfDisc}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+Consider a circular sector with central angle $2\alpha$ (in radians) and radius $R$ as shown in the diagram below. If we wish to find the distance of the center of gravity from the center of the sector, we divide the sector into elements of area $dA$ as illustrated.
+\begin{figure}
+\begin{center}
+\includegraphics[scale=1]{draw.eps}
+\end{center}
+\end{figure}
+In general, the mass of a lamina element is given by $dm=\delta_2\, dA$ and the coordinates of the centers of mass are (given that the mass is evenly distributed over the area):
+\begin{eqnarray*}
+\bar{x}&=&\frac{\int\!\!\int_A x\, dA}{A},\\
+\bar{y}&=&\frac{\int\!\!\int_A y\, dA}{A}
+\end{eqnarray*}
+In this case, we will use polar coordinates as it would be much easier to carry out the integration, and the boundaries can be defined easily. In polar coordinates $dA=r\,drd\theta$. The area of the sector is $A=\frac{1}{2} R^2(2\alpha)=\alpha R^2$.
+Now 
+\begin{align*}
+\bar{x}&=\frac{1}{\alpha R^2}\int_0^{2\alpha} \int_0^R x r\,drd\theta\\
+       &=\frac{1}{\alpha R^2}\int_0^{2\alpha} \int_0^R r^2\cos\theta \,drd\theta\\
+       &=\frac{1}{\alpha R^2}\int_0^{2\alpha} \frac{R^3}{3}\cos\theta \,d\theta\\
+       &=\frac{R}{3\alpha}\sin2\alpha
+\end{align*}
+Now we follow a similar procedure for the y-coordinate:
+\begin{align*}
+\bar{y}&=\frac{1}{\alpha R^2}\int_0^{2\alpha} \int_0^R y r\,drd\theta\\
+       &=\frac{1}{\alpha R^2}\int_0^{2\alpha} \int_0^R r^2\sin\theta \,drd\theta\\
+       &=\frac{1}{\alpha R^2}\int_0^{2\alpha} \frac{R^3}{3}\sin\theta \,d\theta\\
+       &=\frac{R}{3\alpha}(1-\cos2\alpha)
+\end{align*}
+The center of gravity is $(\bar{x},\bar{y})$ and the distance $d$ of the center of gravity from the center of the sector is given by:
+$$d=\sqrt{\bar{x}^2 + \bar{y}^2}$$
+We substitute for $\bar{x}$ and $\bar{y}$:
+\begin{align*}
+d&=\sqrt{\left(\frac{R\sin2\alpha}{3\alpha}\right)^2 + \left(\frac{R(1-\cos2\alpha)}{3\alpha}\right)^2}\\
+ &=\frac{R}{3\alpha}\sqrt{\sin^{2}2\alpha + (1-\cos2\alpha)^2}
+\end{align*}
+From trigonometry, we know that:
+\begin{center} 
+$2\sin^2\alpha=1-\cos2\alpha$ \\
+$\sin^2\alpha + \cos^2\alpha=1$\\
+$\sin2\alpha=2\sin\alpha\cos\alpha$
+\end{center}
+Keeping these in mind, we substitute:
+\begin{align*}
+d&=\frac{R}{3\alpha}\sqrt{4\sin^2\alpha\cos^2\alpha + 4\sin^4\alpha}\\
+ &=\frac{2R}{3\alpha}\sqrt{\sin^2\alpha(\cos^2\alpha + \sin^2\alpha)}\\
+ &=\frac{2R\sin\alpha}{3\alpha}
+\end{align*}
+In conclusion, the distance of the center of gravity of a circular sector with radius $R$ and angle $2\alpha$ from the center of the sector is given by:
+$$d=\frac{2R\sin\alpha}{3\alpha}$$
+
+%%%%%
+%%%%%
+\end{document}

@@ -1,0 +1,100 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{InverseLaplaceTransformOfDerivatives}
+\pmcreated{2013-03-22 16:46:27}
+\pmmodified{2013-03-22 16:46:27}
+\pmowner{pahio}{2872}
+\pmmodifier{pahio}{2872}
+\pmtitle{inverse Laplace transform of derivatives}
+\pmrecord{11}{39003}
+\pmprivacy{1}
+\pmauthor{pahio}{2872}
+\pmtype{Derivation}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{44A10}
+\pmsynonym{differentiation of Laplace transform}{InverseLaplaceTransformOfDerivatives}
+\pmrelated{MellinsInverseFormula}
+\pmrelated{SeparationOfVariables}
+\pmrelated{KalleVaisala}
+\pmrelated{TableOfLaplaceTransforms}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+ \usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\theoremstyle{definition}
+\newtheorem*{thmplain}{Theorem}
+
+\begin{document}
+It may be shown that the Laplace transform \,$F(s) = 
+\int _0^\infty e^{-st}f(t)\,dt$\, is always differentiable and that its derivative can be formed by \PMlinkname{differentiating under the integral sign}{DifferentiationUnderIntegralSign}, i.e. one has
+ $$F'(s) = \int_0^\infty\frac{\partial(e^{-st}f(t))}{\partial s}\,dt = 
+\int_0^\infty e^{-st}(-t)f(t)\,dt.$$
+This gives the rule
+\begin{align}
+    \mathcal{L}^{-1}\{F'(s)\} = -tf(t).
+\end{align}
+Applying (1) to $F'(s)$ instead of $F(s)$ gives
+     $$\mathcal{L}^{-1}\{F''(s)\} = t^2f(t).$$
+Continuing this way we can obtain the general rule
+\begin{align}
+    \mathcal{L}^{-1}\{F^{(n)}(s)\} = (-1)^nt^nf(t),
+\end{align}
+or equivalently
+\begin{align}
+ \mathcal{L}\{t^nf(t)\} = (-1)^n\cdot\frac{d^n\mathcal{L}\{f(t)\}}{ds^n},
+\end{align}
+for any\, $n = 1,\,2,\,3,\,\ldots$ (and of course for\, $n = 0$).\\
+
+\textbf{Example.}\, Let's find the Laplace transform of the first kind and 0th \PMlinkescapetext{order} Bessel function 
+$$ J_{0}(t) := 
+\sum_{m=0}^\infty \frac{(-1)^m}{(m!)^2}\left(\frac{t}{2}\right)^{2m},
+$$
+which is the solution $y(t)$ of the Bessel's equation 
+\begin{align}
+    ty''(t)+y'(t)+ty(t) = 0
+\end{align}
+satisfying the initial condition\, $y(0) = 1$.\, The equation implies that\, $y'(0) = 0$.
+
+By (3), the Laplace transform of the differential equation (4) is
+$$-\frac{d\mathcal{L}\{y''(t)\}}{ds}+\mathcal{L}\{y'(t)\}
+-\frac{d\mathcal{L}\{y(t)\}}{ds} = 0.$$
+Using here twice the rule 5 in the \PMlinkname{parent}{LaplaceTransform} entry gives us
+$$-\frac{d(s^2Y(s)-s)}{ds}+sY(s)-1-\frac{dY(s)}{ds} = 0,$$
+which is simplified to
+$$(s^2+1)\frac{dY}{ds}+sY = 0,$$
+i.e. to
+$$\frac{dY}{Y} = -\frac{s\,ds}{s^2+1}.$$
+Integrating this gives  
+$$\ln Y = -\frac{1}{2}\ln(s^2+1)+\ln C = \ln\frac{C}{\sqrt{s^2+1}},$$
+i.e.
+   $$Y(s) = \frac{C}{\sqrt{s^2+1}}.$$
+The initial condition enables to justify that the integration constant $C$ must be 1.\, Thus we have the result
+$$\mathcal{L}\{J_0(t)\} = \frac{1}{\sqrt{s^2+1}}.$$ 
+
+
+\begin{thebibliography}{9}
+\bibitem{K.V.}{\sc K. V\"ais\"al\"a:} {\em Laplace-muunnos}.\, Handout Nr. 163.\quad Teknillisen korkeakoulun ylioppilaskunta, Otaniemi, Finland (1968).
+\end{thebibliography}
+
+%%%%%
+%%%%%
+\end{document}

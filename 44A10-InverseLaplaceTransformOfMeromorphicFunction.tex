@@ -1,0 +1,128 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{InverseLaplaceTransformOfMeromorphicFunction}
+\pmcreated{2013-03-22 19:04:46}
+\pmmodified{2013-03-22 19:04:46}
+\pmowner{pahio}{2872}
+\pmmodifier{pahio}{2872}
+\pmtitle{inverse Laplace transform of meromorphic function}
+\pmrecord{17}{41968}
+\pmprivacy{1}
+\pmauthor{pahio}{2872}
+\pmtype{Derivation}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{44A10}
+\pmrelated{KalleVaisala}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+ \usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+\usepackage{pstricks}
+\usepackage{pst-plot}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\theoremstyle{definition}
+\newtheorem*{thmplain}{Theorem}
+
+\begin{document}
+The complex integral appearing in Mellin's inverse formula is determined usually by utilising Cauchy residue theorem.\, In the applications, one has most often to find the inverse Laplace transform of a function which is analytic in the whole complex plane except in the poles, i.e. of a meromorphic function $F(s)$.\\
+
+Assume that $F(s)$ is an $\mathcal{L}^{-1}$-transformable meromorphic function having the poles
+$$a_0,\,a_1,\,a_2,\,\ldots$$
+which are isolated points and situated in the half-plane\, $\mbox{Re}\,s < \gamma$.
+
+Think an infinite set of circular arcs $b_\nu$ with centres in the origin, with end points on the line 
+\,$\mbox{Re}\,s = \gamma$\, and with radii $R_0 < R_1 < R_2 < \ldots$ satisfying 
+$$\lim_{\nu\to\infty}R_\nu \;=\; \infty.$$
+Then $F(s)$ is analytic on the line and the arcs when the latter pass through no one of the poles.\, If 
+$a_0,\,a_1,\,\ldots,\,a_k$ are the poles of $F(s)$ inside the circle-segment \PMlinkescapetext{bounded} by $b_\nu$ and its chord, then the contour integral around the perimetre of the \PMlinkescapetext{segment} is by the \PMlinkid{residue theorem}{1154} \PMlinkescapetext{expressible as}
+\begin{align}
+\oint\!e^{st}F(s)\,ds \;=\; \int_{\gamma-i\beta_\nu}^{\gamma+i\beta_\nu}\!e^{st}F(s)\,ds+\int_{b_\nu}\!e^{st}F(s)\,ds 
+\;=\; 2i\pi\!\sum_{n=1}^k\mbox{Res}\left(e^{st}F(s);\,a_n\right).
+\end{align}
+
+\begin{center}
+\begin{pspicture}(-6,-6.3)(3,6.3)
+\psaxes[Dx=9,Dy=9]{->}(0,0)(-5,-6)(3,6)
+\rput(3.3,-0.1){$\mbox{Re}$}
+\rput(0.3,6.2){$\mbox{Im}$}
+\rput(-3.5,5){$s\mbox{-plane}$}
+\rput(0.15,-0.2){$0$}
+\psdot(0,0)
+\psarc[linecolor=blue,linewidth=0.05]{->}(0,0){4}{75}{285}
+\rput(-3.9,-1.8){$b_\nu$}
+\rput(1.15,-0.2){$\gamma$}
+\psline[linestyle=dashed](0,0)(-2,3.466)
+\rput(-1.3,1.65){$R_\nu$}
+\psline[linecolor=blue,linewidth=0.05]{->}(1.04,-3.9)(1.04,3.9)
+\psline(1.04,-5.5)(1.04,-3.9)
+\psline(1.04,+5.5)(1.04,+3.9)
+\rput(1.7,-3.9){$\gamma\!-\!i\beta_\nu$}
+\rput(1.7,+3.9){$\gamma\!+\!i\beta_\nu$}
+\end{pspicture}
+\end{center}
+
+We suppose that the arcs $b_\nu$ may be chosen such that
+\begin{align}
+\lim_{\nu\to\infty}\int_{b_\nu}\!e^{st}F(s)\,ds\;=\; 0.
+\end{align}
+This implies by (1) that
+$$\int_{\gamma-i\beta_\nu}^{\gamma+i\beta_\nu}\!e^{st}F(s)\,ds 
+\;=\; 2i\pi\!\sum_n\mbox{Res}\left(e^{st}F(s);\,a_n\right),$$
+whence
+\begin{align}
+f(t) \;=\; \mathcal{L}^{-1}\{F(s)\} \;=\; \sum_n\mbox{Res}\left(e^{st}F(s);\,a_n\right)
+\end{align}
+by Mellin's inverse formula.\\
+
+In practice, the meromorphic function $F(s)$ is frequently of the form
+$$F(s) \;\equiv\; \frac{P(s)}{Q(s)}$$
+where $P(s)$ and $Q(s)$ are entire functions and the poles of $F(s)$, i.e. the zeros of $Q(s)$, are \PMlinkname{simple}{Pole}.\, In this case we obtain
+$$\mbox{Res}\left(e^{st}F(s);\,a_n\right) \;=\; \lim_{s\to a_n}(s\!-\!a_n)e^{st}F(s) 
+\;=\; \frac{P(a_n)e^{a_nt}}{\lim_{s\to a_n}\frac{Q(s)-Q(a_n)}{s-a_n}} 
+\;=\; \frac{P(a_n)}{Q'(a_n)}e^{a_nt}.$$
+So we have the \PMlinkescapetext{formula}
+\begin{align}
+\mathcal{L}^{-1}\!\left\{\frac{P(s)}{Q(s)}\right\} \;=\; \sum_n\frac{P(a_n)}{Q'(a_n)}e^{a_nt}
+\end{align}
+which is a generalisation of Heaviside formula.\\
+
+
+\textbf{Example.}\, In solving the heat equation 
+$$u''_{xx}(x,\,t) \;=\; u'_t(x,\,t)$$
+for\, $0 < x < 1$,\, $t > 0$\, under the initial condition \,$u(x,\,0) = 0$\, and the boundary conditions \, 
+$u(0,\,t) = 0$\, and\, $u(1,\,t) = k$,\, one gets the Laplace-transformed equations
+$$U''_{xx}(x,\,s) \;=\; s\,U(x,\,s); \quad U(0,\,s) \;=\; 0, \quad U(1,\,s) \;=\; \frac{k}{s}.$$
+These yield easily
+\begin{align}
+U(x,\,s) \;=\; \frac{k\sinh{x\sqrt{s}}}{s\sinh\sqrt{s}},
+\end{align}
+where the series expansions allow to reduce (5) to a quotient of entire functions.\, The denominator is then\, $Q(s) := \sqrt{s}\sinh{\sqrt{s}}$\, whose zeros \,$a_n = -n^2\pi^2$\, ($n = 0,\,1,\,2,\,\ldots$) are all simple.\, The calculations and (4) lead to the solution
+$$u(x,\,t) \;=\; k\left[x+\frac{2}{\pi}\sum_{n=1}^\infty\frac{(-1)^n}{n}e^{-n^2\pi^2t}\sin{n\pi x}\right],$$
+which is seen to satisfy the initial and boundary conditions.
+
+
+\begin{thebibliography}{9}
+\bibitem{K.V.}{\sc K. V\"ais\"al\"a:} {\em Laplace-muunnos}.\, Handout Nr. 163.\quad Teknillisen korkeakoulun ylioppilaskunta, Otaniemi, Finland (1968).
+\end{thebibliography}
+
+%%%%%
+%%%%%
+\end{document}

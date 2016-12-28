@@ -1,0 +1,45 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{MaximalErgodicTheorem}
+\pmcreated{2014-03-19 22:15:48}
+\pmmodified{2014-03-19 22:15:48}
+\pmowner{Filipe}{28191}
+\pmmodifier{Filipe}{28191}
+\pmtitle{Maximal ergodic theorem}
+\pmrecord{3}{88066}
+\pmprivacy{1}
+\pmauthor{Filipe}{28191}
+\pmtype{Theorem}
+\pmrelated{birkhoff ergodic theorem}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% need this for including graphics (\includegraphics)
+\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+
+% making logically defined graphics
+%\usepackage{xypic}
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+Let $(X,\mathcal{B},\mu)$ be a probability space and $T:X\rightarrow X$ a measure preserving transformation. Let $f$ be a $L^1(\mu)$ function.
+Define the averages 
+$$f^*(x)=\sup_{N\geq 1} \frac{1}{N} \sum_{i=0}^{N-1} f(T^i(x))$$
+Then, for any $\lambda \in \textbf{R}$, we have:
+$$\int_{f^*>\lambda} fd\mu \geq \lambda \mu ( \{f^* > \lambda \} )$$
+This theorem may be used in the proof of the ergodic theorem (also known as Birkhoff ergodic theorem, or pointwise or strong ergodic theorem)
+\end{document}

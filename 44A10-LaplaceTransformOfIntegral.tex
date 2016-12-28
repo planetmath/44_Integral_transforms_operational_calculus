@@ -1,0 +1,68 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{LaplaceTransformOfIntegral}
+\pmcreated{2014-03-17 10:43:31}
+\pmmodified{2014-03-17 10:43:31}
+\pmowner{pahio}{2872}
+\pmmodifier{pahio}{2872}
+\pmtitle{Laplace transform of integral}
+\pmrecord{8}{41081}
+\pmprivacy{1}
+\pmauthor{pahio}{2872}
+\pmtype{Derivation}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{44A10}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+ \usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\theoremstyle{definition}
+\newtheorem*{thmplain}{Theorem}
+
+\begin{document}
+On can show that if a real function \,$t \mapsto f(t)$\, is 
+\PMlinkname{Laplace-transformable}{LaplaceTransform}, as well 
+is $\displaystyle\int_0^tf(\tau)\,d\tau$.\, The latter is also 
+continuous for\, $t > 0$\, and by the 
+\PMlinkname{Newton--Leibniz formula}{FundamentalTheoremOfCalculus}, 
+has the derivative equal $f(t)$.\, Hence we may apply the 
+formula for Laplace transform of derivative, obtaining
+$$F(s) \;=\; \mathcal{L}\{f(t)\} \;=\; s\,\mathcal{L} \left\{\int_0^t\!f(\tau)\,d\tau\right\}-\int_0^0\!f(t)\,dt 
+\;=\; s\,\mathcal{L} \left\{\int_0^t\!f(\tau)\,d\tau\right\},$$
+i.e.
+\begin{align}
+\mathcal{L} \left\{\int_0^t\!f(\tau)\,d\tau\right\} \;=\; \frac{F(s)}{s}.
+\end{align}\\
+
+\textbf{Application.}\, We start from the easily derivable rule
+$$\frac{1}{s} \;\curvearrowright\; 1,$$
+where the curved \PMlinkescapetext{arrow points} from the Laplace-transformed function to the original function.\, The formula (1) thus yields successively
+$$\frac{1}{s^2} \;\curvearrowright\; \int_0^t\!1\,d\tau \;=\; t,$$
+$$\frac{1}{s^3} \;\curvearrowright\; \int_0^t\!\tau\,d\tau \;=\; \frac{t^2}{2!},$$
+$$\frac{1}{s^4} \;\curvearrowright\; \int_0^t\!\frac{\tau^2}{2!}\,d\tau \;=\; \frac{t^3}{3!},$$
+etc.\, Generally, one has
+\begin{align}
+\frac{1}{s^n} \;\curvearrowright\; \frac{t^{n-1}}{(n\!-\!1)!} \quad \forall\, n \in \mathbb{Z}_+.
+\end{align}
+%%%%%
+%%%%%
+\end{document}

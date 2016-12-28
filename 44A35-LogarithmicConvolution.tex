@@ -1,0 +1,58 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{LogarithmicConvolution}
+\pmcreated{2013-03-22 14:28:26}
+\pmmodified{2013-03-22 14:28:26}
+\pmowner{swiftset}{1337}
+\pmmodifier{swiftset}{1337}
+\pmtitle{logarithmic convolution}
+\pmrecord{4}{35995}
+\pmprivacy{1}
+\pmauthor{swiftset}{1337}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{44A35}
+\pmsynonym{scale convolution}{LogarithmicConvolution}
+\pmrelated{Convolution}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+\begin{document}
+\paragraph{Definition}
+
+The \emph{scale convolution} of two functions $s(t)$ and $r(t)$, also known as their \emph{logarithmic convolution} is defined as the function 
+$$ s \ast_l r(t) = r \ast_l s(t) = \int_0^\infty s(\frac{t}{a})r(a) \frac{da}{a} $$
+when this quantity exists.
+
+\paragraph{Results}
+
+The logarithmic convolution can be related to the ordinary convolution by changing the variable from $t$ to $v = \log t$:
+\begin{eqnarray*}
+s \ast_l r(t) & = & \int_0^\infty s(\frac{t}{a})r(a) \frac{da}{a} = 
+                \int_{-\infty}^\infty s(\frac{t}{e^u}) r(e^u) du \\
+ & = & \int_{-\infty}^\infty s(e^{\log t - u})r(e^u) du
+\end{eqnarray*}
+Define $f(v) = s(e^v)$ and $g(v) = r(e^v)$ and let $v = \log t$, then
+$$ s \ast_l r(v) = f \ast g(v) = g \ast f(v) = r \ast_l s(v). $$
+%%%%%
+%%%%%
+\end{document}

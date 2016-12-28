@@ -1,0 +1,85 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{SineIntegralAtInfinity}
+\pmcreated{2013-03-22 15:17:22}
+\pmmodified{2013-03-22 15:17:22}
+\pmowner{pahio}{2872}
+\pmmodifier{pahio}{2872}
+\pmtitle{sine integral at infinity}
+\pmrecord{18}{37082}
+\pmprivacy{1}
+\pmauthor{pahio}{2872}
+\pmtype{Derivation}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{44A10}
+\pmclassification{msc}{30A99}
+\pmsynonym{limit of sine integral}{SineIntegralAtInfinity}
+%\pmkeywords{Laplace transform}
+%\pmkeywords{inverse Laplace transform}
+\pmrelated{SineIntegral}
+\pmrelated{SincFunction}
+\pmrelated{SubstitutionNotation}
+\pmrelated{IncompleteGammaFunction}
+\pmrelated{ExampleOfSummationByParts}
+\pmrelated{SignumFunction}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+ \usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+\DeclareMathOperator{\Si}{Si}
+\newcommand{\sijoitus}[2]%
+{\operatornamewithlimits{\Big/}_{\!\!\!#1}^{\,#2}}
+
+\theoremstyle{definition}
+\newtheorem*{thmplain}{Theorem}
+\begin{document}
+The value of the improper integral (one of the {\em Dirichlet integrals})
+  $$\int_0^\infty \frac{\sin{x}}{x}\,dx = \lim_{x\to\infty}\Si{x},$$
+where Si means the \PMlinkname{sine integral}{SineIntegral} function, is most simply determined by using Laplace transform which may be aimed to the integrand (see integration of Laplace transform with respect to parameter).\, Therefore the integrand must be equipped with an additional parametre $t$:
+
+$$\mathcal{L}\{\int_0^\infty \frac{1}{x}\sin{tx}\,dx\} = 
+\int_0^\infty\frac{1}{x}\!\cdot\!\frac{x}{s^2+x^2}\,dx = 
+\int_0^\infty\!\frac{dx}{s^2+x^2} = 
+\frac{1}{s}\!\sijoitus{x = 0}{\quad\infty}\!\arctan{\frac{x}{s}} = \frac{\pi}{2}\!\cdot\!\frac{1}{s}$$
+The obtained transform $\frac{\pi}{2}\!\cdot\!\frac{1}{s}$ corresponds (see the inverse Laplace transformation) to the \PMlinkescapetext{constant} function \,$t\mapsto\frac{\pi}{2}$\, because 
+\,$\mathcal{L}\{1\} = \frac{1}{s}$.\, Thus we have the result 
+\begin{align}
+\int_0^\infty \frac{\sin{x}}{x}\,dx \;=\; \frac{\pi}{2}.
+\end{align}
+
+
+\textbf{Note 1.}\, Since\, $x\mapsto \frac{\sin{x}}{x}$\; or\; $x\mapsto\operatorname{sinc}{x}$\; is an even function, the result (1) may be written also
+$$ \int_{-\infty}^\infty \operatorname{sinc}{x}\,dx=\pi;$$
+see the \PMlinkname{$\operatorname{sinc}$-function}{SincFunction}.\\
+
+\textbf{Note 2.}\, The result (1) may be easily generalised to
+\begin{align}
+\int_0^\infty \frac{\sin{ax}}{x}\,dx \;=\; \frac{\pi}{2} \qquad (a > 0)
+\end{align}
+and to
+\begin{align}
+\int_0^\infty \frac{\sin{ax}}{x}\,dx \;=\; (\mbox{sgn}\,a)\frac{\pi}{2} \qquad (a \in \mathbb{R}).
+\end{align}
+
+
+%%%%%
+%%%%%
+\end{document}

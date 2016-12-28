@@ -1,0 +1,57 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{RulesForLaplaceTransform}
+\pmcreated{2013-03-22 18:31:08}
+\pmmodified{2013-03-22 18:31:08}
+\pmowner{pahio}{2872}
+\pmmodifier{pahio}{2872}
+\pmtitle{rules for Laplace transform}
+\pmrecord{7}{41206}
+\pmprivacy{1}
+\pmauthor{pahio}{2872}
+\pmtype{Derivation}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{44A10}
+\pmrelated{TableOfLaplaceTransforms}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+ \usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\theoremstyle{definition}
+\newtheorem*{thmplain}{Theorem}
+
+\begin{document}
+If\, $\mathcal{L}\{f(t)\} = F(s)$,\, then
+\begin{itemize}
+\item $\mathcal{L}\{e^{at}f(t)\} \,=\, F(s\!-\!a)$ \quad for\; $s > a$,
+\item $\mathcal{L}\{f(\frac{t}{a})\} \;=\; a\,F(as)$ \qquad for\; $a > 0$.\\
+\end{itemize}
+
+For deriving these rules, we start from the definition of Laplace transform.\, In the first case, we shall use the notation \,$s\!-\!a = r$:
+$$\mathcal{L}\{e^{at}f(t)\} = \int_0^\infty\!e^{-st}e^{at}f(t)\,dt = 
+\int_0^\infty\!e^{-(s-a)t}f(t)\,dt = \int_0^\infty\!e^{-rt}f(t)\,dt = F(r) = F(s\!-\!a).$$ 
+In the second case, we make the change of variable \,$\frac{t}{a} = u$\, and later use the notation\, $sa = r$:
+$$\mathcal{L}\{f(\frac{t}{a})\} = \int_0^\infty\!e^{-st}f(\frac{t}{a})\,dt =
+a\!\int_0^\infty\!e^{-sau}f(u)\,du = a\!\int_0^\infty\!e^{-ru}f(u)\,du = aF(r) = a\,F(as).$$
+%%%%%
+%%%%%
+\end{document}

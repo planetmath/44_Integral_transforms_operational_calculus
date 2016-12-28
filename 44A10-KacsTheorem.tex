@@ -1,0 +1,51 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{KacsTheorem}
+\pmcreated{2014-03-19 22:18:04}
+\pmmodified{2014-03-19 22:18:04}
+\pmowner{Filipe}{28191}
+\pmmodifier{Filipe}{28191}
+\pmtitle{Kac's theorem}
+\pmrecord{4}{88071}
+\pmprivacy{1}
+\pmauthor{Filipe}{28191}
+\pmtype{Theorem}
+\pmrelated{Poincaré Recurrence theorem}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% need this for including graphics (\includegraphics)
+\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+
+% making logically defined graphics
+%\usepackage{xypic}
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+Let $f:M\rightarrow M$ be a transformation and $\mu$ a finite invariant measure for $f$. Let $E$ be a subset of $M$ with positive measure. We define the first return map for $E$:
+$$\rho_E(x)=\min \{ n \geq 1: f^n(x)\in E \}$$
+If the set on the right is empty, then we define $\rho_E(x)=\infty$. The Poincaré recurrence theorem asserts that $\rho_E$ is finite for almost every $x \in R$.
+We define the following sets:
+$$E_0 = \{ x \in E: f^n(x) \notin E, n\geq 1 \}$$
+$$E_0^*= \{ x \in M: f^n(x) \notin E, n \geq 0 \}$$
+By Poincaré recurrence theorem, $\mu(E_0)=0$.
+Kac's theorem asserts that the function $\rho_E$ is integrable and
+$$\int_E \rho_E d\mu= \mu(M)-\mu(E_0^*)$$
+When the system is ergodic, then $\mu(E_0^*)=0$, and Kac's theorem implies:
+$$\frac{1}{\mu(E)}\int_E \rho_E d\mu = \frac{\mu(M)}{\mu(E)}$$
+This equality can be interpreted as: the mean return time to $E$ s inversely proportional to the measure of $E$.
+\end{document}

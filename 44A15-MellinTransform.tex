@@ -1,0 +1,57 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{MellinTransform}
+\pmcreated{2015-02-17 15:10:57}
+\pmmodified{2015-02-17 15:10:57}
+\pmowner{rspuzio}{6075}
+\pmmodifier{pahio}{2872}
+\pmtitle{Mellin transform}
+\pmrecord{7}{40589}
+\pmprivacy{1}
+\pmauthor{rspuzio}{2872}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{44A15}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+The \emph{Mellin transform} is an integral transform defined as follows:
+\[
+ F(s) = \int_0^\infty f(t) t^{s-1} \, dt
+\]
+Intuitively, it may be viewed as a continuous analogue of a power series 
+--- instead of synthetizing a function by summing multiples of integer
+powers, we integrate over all real powers.  This transform is closely
+related to the Laplace transform --- if we make a change of variables
+$t = e^{-r}$  and define $g$ by $f(e^{-r}) = g(r)$, then the above integral 
+becomes
+\[
+ F(s) = -\int_{-\infty}^{+\infty} g(r) e^{-rs} \, dr ,
+\]
+which is a bilateral Laplace transform.
+
+(more to come)
+%%%%%
+%%%%%
+\end{document}

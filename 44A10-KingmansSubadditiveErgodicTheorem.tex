@@ -1,0 +1,50 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{KingmansSubadditiveErgodicTheorem}
+\pmcreated{2014-03-18 14:34:03}
+\pmmodified{2014-03-18 14:34:03}
+\pmowner{Filipe}{28191}
+\pmmodifier{Filipe}{28191}
+\pmtitle{Kingman's subadditive ergodic theorem}
+\pmrecord{5}{88069}
+\pmprivacy{1}
+\pmauthor{Filipe}{28191}
+\pmtype{Theorem}
+\pmrelated{birkhoff ergodic theorem}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% need this for including graphics (\includegraphics)
+\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+
+% making logically defined graphics
+%\usepackage{xypic}
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+Let $(M,\mathcal{A},\mu)$ be a probability space, and $f:M\rightarrow M$ be a measure preserving dynamical system. let $\phi_n:M\rightarrow \textbf{R}$, $n\geq 1$ be a subadditive sequence of measurable functions, such that $\phi_1^+$ is integrable, where $\phi_1^+=\max \{\phi,0\}$. Then, the sequence $(\frac{\phi_n}{n})_n$ converges $\mu$ almost everywhere to a function $\phi: M \rightarrow [-\infty,\infty)$ such that:
+\begin{itemize}
+\item[] $\phi^+$ is integrable
+\item[] $\phi$ is $f$ invariant, that is, $\phi(f(x))=\phi(x)$ for $\mu$ almost all $x$, and
+\item[] $$\int \phi d\mu = \lim_n \frac{1}{n} \int \phi_n d\mu= \inf_n \frac{1}{n} \int \phi_n d\mu \in [-\infty,\infty)$$
+\end{itemize}
+The fact that the limit equals the infimum is a consequence of the fact that the sequence $\int \phi_n d\mu$ is a subadditive sequence and Fekete's subadditive lemma. 
+
+A superadditive version of the theorem also exists. Given a superadditive sequence $\varphi_n$, then the symmetric sequence is subadditive and we may apply the original version of the theorem.
+
+Every additive sequence is subadditive. As a consequence, one can prove the Birkhoff ergodic theorem from Kingman's subadditive ergodic theorem.
+\end{document}

@@ -1,0 +1,94 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{LaplaceTransformOfSineIntegral}
+\pmcreated{2014-11-07 15:36:06}
+\pmmodified{2014-11-07 15:36:06}
+\pmowner{pahio}{2872}
+\pmmodifier{pahio}{2872}
+\pmtitle{Laplace transform of sine integral}
+\pmrecord{15}{40587}
+\pmprivacy{1}
+\pmauthor{pahio}{2872}
+\pmtype{Example}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{44A10}
+\pmsynonym{Laplace transform of sinc function}{LaplaceTransformOfSineIntegral}
+\pmrelated{SubstitutionNotation}
+\pmrelated{SincFunction}
+\pmrelated{TableOfLaplaceTransforms}
+\pmrelated{SineIntegral}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+\newcommand{\sijoitus}[2]%
+{\operatornamewithlimits{\Big/}_{\!\!\!#1}^{\,#2}}
+\begin{document}
+\PMlinkescapeword{integral} \PMlinkescapeword{transformation} \PMlinkescapeword{formula}
+\subsection{Derivation of $\mathcal{L}\{\mathrm{Si}\,t\}$}
+
+If one performs the change of integration variable
+$$u \;=\; tx, \qquad du \;=\; t\,dx$$
+in the defining \PMlinkname{integral}{DefiniteIntegral}
+$$\mathrm{Si}\,t \;=\; \int_0^{\,t}\!\frac{\sin{u}}{u}\,du,$$
+of the sine integral function, one obtains
+$$\mathrm{Si}\,t \;=\; \int_0^1\frac{\sin{tx}}{tx}t\,dx \;=\; \int_0^1\frac{\sin{tx}}{x}\,dx,$$
+getting \PMlinkescapetext{constant} \PMlinkname{limits}{UpperLimit}.\, We know (see the entry Laplace transform of sine and cosine) that
+$$\mathcal{L}\left\{\frac{\sin{tx}}{x}\right\} \;=\; 
+\frac{1}{s^2+x^2}.$$
+This transformation formula can be integrated with respect to the parametre $x$:
+$$\mathcal{L}\left\{\int_0^1\frac{\sin{tx}}{x}\,dx\right\} 
+\;=\; \int_0^1\!\frac{1}{s^2+x^2}\,dx \;=\;
+\frac{1}{s}\sijoitus{x=0}{\quad 1}\;\arctan\frac{x}{s} \;=\; 
+\frac{1}{s}\arctan\frac{1}{s}.$$
+Thus we have the transformation formula of the sinus integralis:
+\begin{align}
+\mathcal{L}\left\{\mathrm{Si}\,t\right\} \;=\; \frac{1}{s}\arctan\frac{1}{s}.
+\end{align}
+
+\subsection{Laplace transform of sinc function}
+
+By the formula \;$\mathcal{L}\{f'\} = s \mathcal{L}\{f\}-\lim_{x \to 0+}f(x)$\; of the \PMlinkname{parent}{LaplaceTransform} entry,
+we obtain as consequence of (1), that
+$$\mathcal{L}\left\{\frac{d}{dt}\mathrm{Si}\,t\right\} \;=\; s\cdot\frac{1}{s}\arctan\frac{1}{s}-\mathrm{Si}\,0,$$
+i.e.
+\begin{align}
+\mathcal{L}\left\{\frac{\sin{t}}{t}\right\} \;=\; \arctan\frac{1}{s}.
+\end{align}
+
+
+The formula (2) may be determined also directly using the definition of Laplace transform.\, Take an additional parametre $a$ to the defining integral 
+$$\mathcal{L}\{\frac{\sin{t}}{t}\} \;=\; \int_0^\infty e^{-st}\,\frac{\sin t}{t}\,dt$$
+by setting
+$$\int_0^\infty e^{-st}\,\frac{\sin{at}}{t}\,dt \;:=\; \varphi(a).$$
+Now we have the derivative \,$\varphi'(a) = \int_0^\infty e^{-st}\cos{at}\,dt$,\, where one can partially integrate twice, getting 
+$$\varphi'(a) \;=\; \int_0^\infty e^{-st}\cos{at}\,dt \;=\; \frac{1}{s}-\frac{a^2}{s^2}\int_0^\infty e^{-st}
+\cos{at}\,dt.$$
+Thus we solve
+$$\int_0^\infty e^{-st}\cos{at}\,dt \;=\; \frac{\frac{1}{s}}{1+\left(\frac{a}{s}\right)^2} \;=\; \varphi'(a),$$
+and since\, $\varphi(0) = 0$, we obtain\, $\displaystyle\varphi(a) = \arctan\frac{a}{s}$.\, This yields
+$$\int_0^\infty e^{-st}\,\frac{\sin t}{t}\,dt \;=\; \varphi(1) \;=\; \arctan\frac{1}{s},$$
+i.e. the formula (2).
+
+Formula (2) is derived \PMlinkname{here}{LaplaceTransformOfFracftt} in a third way.
+%%%%%
+%%%%%
+\end{document}

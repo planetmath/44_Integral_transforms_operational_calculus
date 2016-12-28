@@ -1,0 +1,62 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{DelayTheorem}
+\pmcreated{2013-03-22 18:02:46}
+\pmmodified{2013-03-22 18:02:46}
+\pmowner{pahio}{2872}
+\pmmodifier{pahio}{2872}
+\pmtitle{delay theorem}
+\pmrecord{10}{40570}
+\pmprivacy{1}
+\pmauthor{pahio}{2872}
+\pmtype{Theorem}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{44A10}
+\pmsynonym{delay theorem of Laplace transform}{DelayTheorem}
+%\pmkeywords{Laplace transform}
+\pmrelated{HeavisideStepFunction}
+\pmrelated{TelegraphEquation}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+ \usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\theoremstyle{definition}
+\newtheorem*{thmplain}{Theorem}
+
+\begin{document}
+\textbf{Theorem.}\, If\, $f(t) \equiv 0$\, for\, $t < 0$\, and\,  $\mathcal{L}\{f(t)\} := F(s)$,\, one has
+$$\mathcal{L}\{f(t\!-\!t_0)\}\;=\; e^{-t_0s}F(s).$$
+
+
+{\em Proof.}\, Since\, $f(t\!-\!t_0) \equiv 0$\, for\, $t < t_0$,\, the definition of Laplace transform at first gives
+$$\mathcal{L}\{f(t\!-\!t_0)\}\;=\; \int_{t_0}^\infty e^{-st}f(t\!-\!t_0)\,dt.$$
+The \PMlinkname{substitution}{SubstitutionForIntegration}\, $t\!-\!t_0 \,:=\, u$\, yields
+$$\mathcal{L}\{f(t\!-\!t_0)\} \;=\; \int_{0}^\infty e^{-s(u+t_0)}f(u)\,du
+\;=\; e^{-t_0s}\int_{0}^\infty e^{-su}f(u)\,du \;=\; e^{-t_0s}F(s).$$
+
+
+\textbf{Corollary.}\, For any $f(t)$ and the Heaviside step function $H(t)$, one has
+$$\mathcal{L}\{f(t\!-\!a)H(t\!-\!a)\} \;=\; e^{-as}F(s).$$
+
+%%%%%
+%%%%%
+\end{document}

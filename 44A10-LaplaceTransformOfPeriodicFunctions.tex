@@ -1,0 +1,78 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{LaplaceTransformOfPeriodicFunctions}
+\pmcreated{2013-03-22 18:58:24}
+\pmmodified{2013-03-22 18:58:24}
+\pmowner{pahio}{2872}
+\pmmodifier{pahio}{2872}
+\pmtitle{Laplace transform of periodic functions}
+\pmrecord{5}{41835}
+\pmprivacy{1}
+\pmauthor{pahio}{2872}
+\pmtype{Derivation}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{44A10}
+\pmrelated{RectificationOfAntiperiodicFunction}
+\pmrelated{TableOfLaplaceTransforms}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+ \usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\theoremstyle{definition}
+\newtheorem*{thmplain}{Theorem}
+
+\begin{document}
+Let $f(t)$ be periodic with the positive \PMlinkname{period}{PeriodicFunctions} $p$.\, Denote by $H(t)$ the Heaviside step function.\, If now 
+$$g(t) \;:=\; f(t)H(t)\!-\!f(t\!-\!p)H(t\!-\!p),$$
+then it follows
+\begin{align}
+g(t) \;=\; 
+\begin{cases}
+f(t) \quad \mbox{for}\;\;0 < t < p,\\
+0 \qquad\, \mbox{otherwise.}
+\end{cases}
+\end{align}
+By the \PMlinkname{parent entry}{DelayTheorem}, the Laplace transform of $g$ is
+$$G(s) \;=\; F(s)\!-\!e^{-ps}F(s),$$
+whence
+$$F(s) \;=\; \frac{G(s)}{1\!-\!e^{-ps}} \;=\; \frac{1}{1\!-\!e^{-ps}}\int_0^\infty\!e^{-st}g(t)\,dt
+\;=\; \frac{1}{1\!-\!e^{-ps}}\int_0^p\!e^{-st}f(t)\,dt.$$\\
+
+
+Thus we have the rule
+\begin{align}
+\mathcal{L}\{f(t)\} \;=\; \frac{1}{1\!-\!e^{-ps}}\int_0^p\!e^{-st}f(t)\,dt \qquad (\mbox{period } p).
+\end{align}
+
+
+On the contrary, if $f(t)$ is antiperiodic with positive antiperiod $p$, then the function
+$$g(t) \;:=\; f(t)H(t)\!+\!f(t\!-\!p)H(t\!-\!p)$$
+also has the property (1).\, Analogically with the preceding procedure, one may derive the rule
+\begin{align}
+\mathcal{L}\{f(t)\} \;=\; \frac{1}{1\!+\!e^{-ps}}\int_0^p\!e^{-st}f(t)\,dt \qquad (\mbox{antiperiod } p).
+\end{align}
+
+
+
+%%%%%
+%%%%%
+\end{document}

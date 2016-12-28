@@ -1,0 +1,63 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{RelativeOfCosineIntegral}
+\pmcreated{2013-03-22 18:44:35}
+\pmmodified{2013-03-22 18:44:35}
+\pmowner{pahio}{2872}
+\pmmodifier{pahio}{2872}
+\pmtitle{relative of cosine integral}
+\pmrecord{8}{41516}
+\pmprivacy{1}
+\pmauthor{pahio}{2872}
+\pmtype{Example}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{44A10}
+%\pmkeywords{cosine integral}
+\pmrelated{SubstitutionNotation}
+\pmrelated{EulersConstant}
+\pmrelated{RelativeOfExponentialIntegral}
+\pmrelated{IntegrationOfLaplaceTransformWithRespectToParameter}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+\newcommand{\sijoitus}[2]%
+{\operatornamewithlimits{\Big/}_{\!\!\!#1}^{\,#2}}
+\begin{document}
+For determining of the value of the improper integral
+$$I(a) \;:=\; \int_0^\infty\frac{\cos{ax^2}-\cos{ax}}{x}\,dx \qquad (a > 0),$$
+related to the cosine integral, we think it as a function of the parametre $a$ which we denote by $t$.\, Then we can take the Laplace transform (see the integration with respect to a parametre in the table of Laplace transforms):
+$$\mathcal{L}\{I(t)\} \;=\; \mathcal{L}\{\int_0^\infty(\cos{tx^2}-\cos{tx})\frac{dx}{x}\} \;=\; 
+\int_0^\infty\left(\frac{s}{s^2\!+\!x^4}-\frac{s}{s^2\!+\!x^2}\right)\frac{dx}{x}$$
+Splitting the fractional expressions to \PMlinkid{partial fractions}{5812} and integrating give
+\begin{align*}
+\mathcal{L}\{I(t)\} & \;=\; 
+\frac{1}{s}\int_0^\infty\left(\frac{1}{x}-\frac{x^3}{s^2\!+\!x^4}-\frac{1}{x}+\frac{x}{s^2\!+\!x^2}\right)dx\\
+ & \;=\; \frac{1}{s}\!\sijoitus{x=0}{\quad\infty}\left[\frac{1}{2}\ln(s^2\!+\!x^2)-\frac{1}{4}\ln(s^2\!+\!x^4)\right] \\
+ & \;=\; \frac{1}{4}\!\sijoitus{x=0}{\quad\infty}\ln\frac{(s^2\!+\!x^2)^2}{s^2\!+\!x^4} 
+   \;\,=\;\, -\frac{\ln{s}}{2s}.
+\end{align*}
+As seen in the \PMlinkid{table of Laplace transforms}{10588}, the gotten expression is the Laplace transform of\, 
+$\displaystyle\frac{\gamma+\ln{t}}{2} \,=\, I(t)$\; (N.B.\, $\displaystyle\mathcal{L}\{1\} = \frac{1}{s}$), and thus we have the result
+$$I(a) \;=\; \frac{\gamma+\ln{a}}{2}.$$
+%%%%%
+%%%%%
+\end{document}

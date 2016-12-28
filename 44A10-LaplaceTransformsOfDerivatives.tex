@@ -1,0 +1,85 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{LaplaceTransformsOfDerivatives}
+\pmcreated{2014-04-06 8:24:33}
+\pmmodified{2014-04-06 8:24:33}
+\pmowner{pahio}{2872}
+\pmmodifier{pahio}{2872}
+\pmtitle{Laplace transforms of derivatives}
+\pmrecord{6}{88063}
+\pmprivacy{1}
+\pmauthor{pahio}{2872}
+\pmtype{Topic}
+\pmclassification{msc}{44A10}
+
+where% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% need this for including graphics (\includegraphics)
+\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+
+% making logically defined graphics
+%\usepackage{xypic}
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+As shown in the \PMlinkname{parent entry}{LaplaceTransformOfDerivative},
+the Laplace transform of the first derivative of a Laplace-transformable 
+function $f(t)$ is got from the formula
+\begin{align}
+\mathcal{L}\{f'(t)\} \;=\; s\,F(s)-\lim_{t\to0+}\!f(t).
+\end{align}
+The rule can be applied also to the function $f'(t)$:
+$$\mathcal{L}\{f''(t)\} \;=\; s[sF(s)-\lim_{t\to0+}\!f(t)]-\lim_{t\to0+}\!f'(t) 
+\;=\; s^2F(s)-sf(0\!^+)-f'(0\!^+)$$
+Here the short notation $0\!^+$ has been used for the right limits.
+
+Further, one can use the rule to $f''(t)$, getting
+$$\mathcal{L}\{f'''(t)\} \;=\; s[s^2F(s)-sf(0\!^+)-f'(0\!^+)]-f''(0\!^+) 
+\;=\; s^3F(s)-s^2f(0\!^+)-sf'(0\!^+)-f''(0\!^+).$$
+Continuing similarly, one comes to the general formula
+\begin{align}
+\mathcal{L}\{f^{(n)}(t)\} 
+\;=\;  s^nF(s)-s^{n-1}f(0\!^+)-s^{n-2}f'(0\!^+)-\ldots-f^{(n-1)}(0\!^+).
+\end{align}
+Use of (2) requires that $f(t)$, $f'(t)$, $f''(t)$, ..., $f^{(n)}(t)$ are 
+Laplace-transformable and that $f(t)$, $f'(t)$, $f''(t)$, ..., 
+$f^{(n-1)}(t)$ are continuous when\, $t > 0$ (not only 
+piecewise continuous).\\
+
+\textbf{Remark.}\, Suppose that $f(t)$ and $f'(t)$ are 
+Laplace-transformable and that $f(t)$ is continuous for\, 
+$t > 0$\, except the point\, $t = a$\, where the function has a 
+finite jump discontinuity.\, Then
+$$\mathcal{L}\{f'(t)\} \;=\; 
+sF(s)-f(0\!^+)-e^{-as}(\lim_{s\to a+}f(s)-\lim_{s\to a-}f(s)).$$\\
+
+
+
+\textbf{Application.}\, Derive the Laplace transform of $\sin{at}$ using the 
+derivatives of sine (cf. Laplace transform of cosine and sine).
+
+We have
+$$f(t) \;:=\; \sin{at}, \qquad f'(t) \;=\; a\cos{at}, \qquad
+f''(t) \;=\; -a^2\sin{at}.$$
+Using (2) with\, $n =2$\, we obtain
+$$\mathcal{L}\{-a^2\sin{at}\} 
+\;=\; s^2\mathcal{L}\{\sin{at}\}-s\sin0-a\cos0,$$
+i.e.
+$$-a^2\mathcal{L}\{\sin{at}\} \;=\; s^2\mathcal{L}\{\sin{at}\}-a,$$
+which implies
+$$\mathcal{L}\{\sin{at}\} \;=\; \frac{a}{s^2\!+\!a^2}.$$
+\end{document}

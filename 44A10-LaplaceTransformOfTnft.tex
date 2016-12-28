@@ -1,0 +1,71 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{LaplaceTransformOfTnft}
+\pmcreated{2013-03-22 18:05:49}
+\pmmodified{2013-03-22 18:05:49}
+\pmowner{pahio}{2872}
+\pmmodifier{pahio}{2872}
+\pmtitle{Laplace transform of $t^nf(t)$}
+\pmrecord{6}{40637}
+\pmprivacy{1}
+\pmauthor{pahio}{2872}
+\pmtype{Derivation}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{44A10}
+\pmrelated{TableOfLaplaceTransforms}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+ \usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\theoremstyle{definition}
+\newtheorem*{thmplain}{Theorem}
+
+\begin{document}
+Let
+$$\displaystyle F(s) \,:=\, \mathcal{L}\{f(t)\} = \int_0^\infty e^{-st}f(t)\,dt.$$
+
+A differentiation under the integral sign with respect to $s$ yields
+$$F'(s) = -\int_0^\infty e^{-st}tf(t)\,dt = -\mathcal{L}\{tf(t)\}.$$
+Differentiating again under the integral sign gives
+$$F''(s) = +\int_0^\infty e^{-st}t^2f(t)\,dt = \mathcal{L}\{t^2f(t)\}.$$
+One can continue similarly, and then we apparently have
+\begin{align}
+F^{(n)}(s) = (-1)^n\int_0^\infty e^{-st}t^nf(t)\,dt = (-1)^n\mathcal{L}\{t^nf(t)\}.
+\end{align}
+If this equation is multiplied by $(-1)^n$, it gives the \PMlinkescapetext{formula}
+\begin{align}
+\mathcal{L}\{t^nf(t)\} = (-1)^nF^{(n)}(s)
+\end{align}
+which is true for\, $n = 1,\,2,\,3,\,\ldots$\\
+
+
+\textbf{Application.}\, Evaluate the improper integral
+$$I := \int_0^\infty t^3e^{-t}\sin{t}\,dt.$$
+By the \PMlinkname{parent entry}{LaplaceTransform}, we have\, $\mathcal{L}\{\sin{t}\} = \frac{1}{1+s^2}$.\, Using this and (2), we may write
+$$\int_0^\infty t^3e^{-st}\sin{t}\,dt = \mathcal{L}\{t^3\sin{t}\} = 
+(-1)^3\frac{d^3}{ds^3}\!\left(\frac{1}{s^2+1}\right) = \frac{24(s-s^3)}{(1+s^2)^4}.$$
+The value of $I$ is obtained by substituting here\, $s = 1$:
+$$I = \frac{24(1-1^3)}{(1+1^2)^4} = 0.$$
+
+%%%%%
+%%%%%
+\end{document}

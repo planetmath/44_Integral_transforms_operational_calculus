@@ -1,0 +1,71 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{RectificationOfAntiperiodicFunction}
+\pmcreated{2013-03-22 18:58:19}
+\pmmodified{2013-03-22 18:58:19}
+\pmowner{pahio}{2872}
+\pmmodifier{pahio}{2872}
+\pmtitle{rectification of antiperiodic function}
+\pmrecord{6}{41832}
+\pmprivacy{1}
+\pmauthor{pahio}{2872}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{44A10}
+\pmclassification{msc}{26A99}
+\pmsynonym{rectification}{RectificationOfAntiperiodicFunction}
+\pmrelated{MaximalNumber}
+\pmrelated{LaplaceTransformOfPeriodicFunctions}
+\pmrelated{MinimalAndMaximalNumber}
+\pmdefines{half-wave rectification}
+\pmdefines{full-wave rectification}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+ \usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\theoremstyle{definition}
+\newtheorem*{thmplain}{Theorem}
+
+\begin{document}
+Let the positive number $p$ be the antiperiod of the real function $f$ and
+$$f(t) \geqq 0 \quad \mbox{for} \;\; 0 < t < p.$$
+Then the function $f_1$ defined by
+\begin{align*}
+f_1(t) \;:=\; \max\{f(t),\,0\} \;=\;
+\begin{cases}
+f(t) \quad \mbox{for} \;\; f(t) > 0,\\
+0 \qquad\, \mbox{for} \;\; f(t) \leqq 0
+\end{cases}
+\end{align*}
+is the \emph{half-wave rectification} of $f$ and the function $f_2$ defined by
+$$f_2(t) \;:=\; |f(t)|$$
+is the \emph{full-wave rectification} of $f$.\, They are \PMlinkname{periodic}{PeriodicFunctions}, the former with \PMlinkname{period}{PeriodicFunctions} $2p$ and the latter with \PMlinkescapetext{period} $p$.\\
+
+
+The Laplace transforms are
+$$\mathcal{L}\{f_1(t)\} \;=\; \frac{1}{1\!-\!e^{-ps}}F(s),$$
+$$\mathcal{L}\{f_2(t)\} \;=\; \frac{1\!+\!e^{-ps}}{1\!-\!e^{-ps}}F(s).$$
+
+
+%%%%%
+%%%%%
+\end{document}

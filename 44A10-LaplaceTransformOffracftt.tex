@@ -1,0 +1,79 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{LaplaceTransformOffracftt}
+\pmcreated{2014-03-08 15:45:15}
+\pmmodified{2014-03-08 15:45:15}
+\pmowner{pahio}{2872}
+\pmmodifier{pahio}{2872}
+\pmtitle{Laplace transform of $\frac{f(t)}{t}$}
+\pmrecord{8}{40918}
+\pmprivacy{1}
+\pmauthor{pahio}{2872}
+\pmtype{Derivation}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{44A10}
+\pmrelated{FundamentalTheoremOfCalculusClassicalVersion}
+\pmrelated{SubstitutionNotation}
+\pmrelated{CyclometricFunctions}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+\DeclareMathOperator{\arccot}{arccot}
+\newcommand{\sijoitus}[2]%
+{\operatornamewithlimits{\Big/}_{\!\!\!#1}^{\,#2}}
+\begin{document}
+Suppose that the quotient
+$$\frac{f(t)}{t} \,:=\; g(t)$$
+is \PMlinkname{Laplace-transformable}{LaplaceTransform}.\, It follows easily that also $f(t)$ is such.\, According to the \PMlinkname{parent entry}{LaplaceTransformOfTnft}, we may write
+$$\mathcal{L}^{-1}\left\{G'(s)\right\} \,=\, -t\,g(t) \,=\, -f(t) \,=\, \mathcal{L}^{-1}\left\{-F(s)\right\}.$$
+Therefore
+$$G'(s) \,=\, -F(s),$$
+whence
+\begin{align}
+G(s) \,=\, -F^{(-1)}(s)+C
+\end{align}
+where $F^{(-1)}(s)$ means any antiderivative of $F(s)$.\, Since each Laplace transformed function vanishes in the infinity \,$s = \infty$\, and thus\, $G(\infty) = 0$,\, the equation (1) implies
+$$C \,=\, F^{(-1)}(\infty)$$
+and therefore
+$$G(s) \,=\, F^{(-1)}(\infty)\!-\!F^{(-1)}(s) \,=\, \int_s^\infty F(u)\,du.$$
+We have obtained the result
+\begin{align}
+\mathcal{L}\left\{\frac{f(t)}{t}\right\} \,=\, \int_s^\infty F(u)\,du.
+\end{align}
+
+
+\textbf{Application.}\, By the table of Laplace transforms,\, 
+$\displaystyle\mathcal{L}\left\{\sin{t}\right\} = \frac{1}{s^2+1}.$\, Accordingly the formula (2) yields
+$$\mathcal{L}\left\{\frac{\sin{t}}{t}\right\} = \int_s^{\,\infty}\!\frac{1}{u^2+1}\,du
+= \sijoitus{s}{\quad\infty}\!\arctan{u} \,=\, \frac{\pi}{2}\!-\!\arctan{s} \,=\, \arccot{s}.$$
+Thus we have
+\begin{align}
+\mathcal{L}\left\{\frac{\sin{t}}{t}\right\} \,=\, \arccot{s} \,=\, \arctan\frac{1}{s}.
+\end{align}
+This result is derived in the entry Laplace transform of sine integral in two other ways.
+
+
+
+
+%%%%%
+%%%%%
+\end{document}

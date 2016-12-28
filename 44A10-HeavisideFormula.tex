@@ -1,0 +1,114 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{HeavisideFormula}
+\pmcreated{2014-03-19 9:14:46}
+\pmmodified{2014-03-19 9:14:46}
+\pmowner{pahio}{2872}
+\pmmodifier{pahio}{2872}
+\pmtitle{Heaviside formula}
+\pmrecord{11}{40909}
+\pmprivacy{1}
+\pmauthor{pahio}{2872}
+\pmtype{Topic}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{44A10}
+\pmsynonym{Heaviside expansion formula}{HeavisideFormula}
+\pmsynonym{inverse Laplace transform of rational function}{HeavisideFormula}
+\pmrelated{HyperbolicFunctions}
+\pmrelated{ComplexSineAndCosine}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+ \usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\theoremstyle{definition}
+\newtheorem*{thmplain}{Theorem}
+
+\begin{document}
+Let $P(s)$ and $Q(s)$ be polynomials with the degree of the former less than the degree of the latter.
+\begin{itemize}
+\item If all complex \PMlinkname{zeroes}{Zero} $a_1,\,a_2,\,\ldots,\,a_n$ of $Q(s)$ are simple, then
+\begin{align}
+\mathcal{L}^{-1}\left\{\frac{P(s)}{Q(s)}\right\} = \sum_{j=1}^n\frac{P(a_j)}{Q'(a_j)}e^{a_jt}.
+\end{align}
+\item If the different zeroes $a_1,a_2,\,\ldots,a_n$ of $Q(s)$ 
+have the multiplicities $m_1,m_2,\,\ldots,m_n$, respectively, 
+we denote\, $F_j(s) := (s\!-\!a_j)^{m_j}P(s)/Q(s)$;\, then
+\begin{align}
+\mathcal{L}^{-1}\left\{\frac{P(s)}{Q(s)}\right\} = 
+\sum_{j=1}^ne^{a_jt}\sum_{k=0}^{m_j-1}\frac{F_j^{(k)}(a_j)t^{m_j\!-\!1\!-\!k}}{k!(m_j\!-\!1\!-\!k)!}.
+\end{align}
+\end{itemize}
+ 
+A special case of the {\em Heaviside formula} (1) is
+\begin{align}
+\mathcal{L}^{-1}\left\{\frac{Q'(s)}{Q(s)}\right\} 
+\;=\; \sum_{j=1}^ne^{a_jt}.
+\end{align}\\
+
+\textbf{Example.}\, Since the zeros of the binomial $s^4\!+\!4a^4$ are\, $s = (\pm1\!\pm\!i)a$,\, we 
+can calculate by (3) as follows:
+$$\mathcal{L}^{-1}\left\{\frac{s^3}{s^4\!+\!4a^4}\right\} 
+= \frac{1}{4}\mathcal{L}^{-1}\left\{\frac{4s^3}{s^4\!+\!4a^4}\right\} = \frac{1}{4}\sum_\pm e^{(\pm 1\pm i)at} 
+= \frac{e^{at}+e^{-at}}{2}\cdot\frac{e^{iat}+e^{-iat}}{2} 
+= \cosh{at}\,\cos{at}$$\\
+
+
+{\it Proof of (1).}\, Without hurting the generality, we can 
+suppose that $Q(s)$ is monic.\, Therefore
+$$Q(s) = (s\!-\!a_1)(s\!-\!a_2)\cdots(s\!-\!s_n).$$
+For\, $j = 1,2,\;\ldots,\,n$,\, denoting
+$$Q(s) := (s\!-\!a_j)Q_j(s),$$
+one has\, $Q_j(a_j) \neq 0$.\, We have a partial fraction 
+expansion of the form
+\begin{align}
+\frac{P(s)}{Q(s)} = \frac{C_1}{s\!-\!a_1}+\frac{C_2}{s\!-\!a_2}+\ldots+\frac{C_n}{s\!-\!a_n}
+\end{align}
+with constants $C_j$.\, According to the linearity and the 
+formula 1 of the \PMlinkname{parent entry}{LaplaceTransform}, 
+one gets
+\begin{align}
+\mathcal{L}^{-1}\left\{\frac{P(s)}{Q(s)}\right\} 
+= \sum_{j=1}^nC_je^{a_jt}.
+\end{align}
+For determining the constants $C_j$, multiply (3) by 
+$s\!-\!a_j$.\, It yields
+$$\frac{P(s)}{Q_j(s)} 
+= C_j+(s\!-\!a_j)\sum_{\nu \neq j}\frac{C_\nu}{s\!-\!a_\nu}.$$
+Setting to this identity \,$s := a_j$\, gives the value
+\begin{align}
+C_j = \frac{P(a_j)}{Q_j(a_j)}.
+\end{align}
+But since\, $Q'(s) = \frac{d}{ds}((s\!-\!a_j)Q_j(s)) 
+= Q_j(s)\!+\!(s\!-\!a_j)Q_j'(s)$,\, 
+we see that\, $Q'(a_j) = Q_j(a_j)$;\, thus the equation (5) may 
+be written
+\begin{align}
+C_j = \frac{P(a_j)}{Q'(a_j)}.
+\end{align}
+The values (6) in (4) produce the formula (1).
+
+\begin{thebibliography}{9}
+\bibitem{K.V.}{\sc K. V\"ais\"al\"a:} {\em Laplace-muunnos}.\, Handout Nr. 163.\quad Teknillisen korkeakoulun ylioppilaskunta, Otaniemi, Finland (1968).
+\end{thebibliography}
+%%%%%
+%%%%%
+\end{document}

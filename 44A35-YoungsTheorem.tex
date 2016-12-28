@@ -1,0 +1,216 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{YoungsTheorem}
+\pmcreated{2013-03-22 18:17:44}
+\pmmodified{2013-03-22 18:17:44}
+\pmowner{Ziosilvio}{18733}
+\pmmodifier{Ziosilvio}{18733}
+\pmtitle{Young's theorem}
+\pmrecord{15}{40912}
+\pmprivacy{1}
+\pmauthor{Ziosilvio}{18733}
+\pmtype{Theorem}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{44A35}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+%% Last modified: August 10, 2011
+%% MSC: 44A35
+\newcommand{\ie}{\textit{i.e.}}
+\newcommand{\Rset}{\ensuremath{\mathbb{R}}}
+
+\newtheorem{theorem*}{Theorem}
+
+Let $f,g:\Rset^n\to\Rset$.
+Recall that the \emph{convolution} of $f$ and $g$ at $x$ is
+\begin{displaymath}
+(f\ast g)(x)=\int_{\Rset^n}f(x-y)g(y)dy
+\end{displaymath}
+provided the integral is defined.
+
+The following result is due to William Henry Young.
+\begin{theorem*}
+Let $p,q,r\in[1,\infty]$ satisfy
+\begin{equation} \label{eq:young-coeff}
+\frac{1}{p}+\frac{1}{q}-\frac{1}{r}=1
+\end{equation}
+with the convention $1/\infty=0$.
+Let $f\in L^p(\Rset^n)$, $g\in L^q(\Rset^n)$.
+Then:
+\begin{enumerate}
+\item \label{it:L1}
+The function $y\mapsto f(x-y)g(y)$
+belongs to $L^1(\Rset^n)$ for almost all $x$.
+\item \label{it:Lr}
+The function $x\mapsto(f\ast g)(x)$
+belongs to $L^r(\Rset^n)$.
+\item \label{it:cpq}
+There exists a constant $c=c_{p,q}\leq 1$,
+depending on $p$ and $q$ but not on $f$ or $g$, such that
+%%\begin{equation} \label{eq:young-conv}
+\begin{displaymath}
+\|{f\ast g}\|_r
+\leq c\cdot\|f\|_p\cdot\|g\|_q
+\end{displaymath}
+%%\end{equation}
+\end{enumerate}
+\end{theorem*}
+Observe the analogy with the similar result
+with convolution replaced by ordinary (pointwise) product,
+where the requirement is $1/p+1/q=1/r$---\ie,
+$1/p+1/q-1/r=0$---instead of (\ref{eq:young-coeff}).
+The cases
+\begin{enumerate}
+\item \label{item:p-q-infty}
+$1/p+1/q=1$, $r=\infty$
+\item \label{item:1-q-q}
+$p=1$, $q \in [1,\infty)$, $r=q$
+\end{enumerate}
+are the most widely known;
+for these we provide a proof, supposing $c_{p,q}=1$.
+We shall use the following facts:
+\begin{itemize}
+\item
+If $x\mapsto f(x),x\mapsto g(x)$ are measurable,
+then $(x,y)\mapsto f(x-y)g(y)$ is measurable.
+\item
+For any $x$, if $f\in L^p$,
+then $y\mapsto f(x-y)$ belongs to $L^p$ as well,
+and its $L^p$-norm is the same as $f$'s.
+\item
+For any $y$, if $f\in L^p$,
+then $x\mapsto f(x-y)$ belongs to $L^p$ as well,
+and its $L^p$-norm is the same as $f$'s.
+\end{itemize}
+
+\textit{Proof of case~\ref{item:p-q-infty}}.
+
+Suppose $f\in L^p(\Rset^n)$, $g\in L^q(\Rset^n)$ with $1/p+1/q=1$.
+Then
+\begin{displaymath}
+\left|\int f(x-y)g(y)dy\right|
+\leq\int|f(x-y)g(y)|dy
+\leq\|f\|_p\|g\|_q\;.
+\end{displaymath}
+This holds for all $x\in\Rset^n$,
+therefore
+\begin{math}
+\|f\ast g\|_\infty\leq\|f\|_p\|g\|_q
+\end{math}
+as well.
+
+\textit{Proof of case~\ref{item:1-q-q}}.
+
+First, suppose $q=1$.
+We may suppose $f$ and $g$ are Borel measurable:
+if they are not, we replace them with Borel measurable functions
+$\tilde{f}$ and $\tilde{g}$
+which are equal to $f$ and $g$, respectively,
+outside of a set of Lebesgue measure zero;
+apply the theorem to $\tilde{f}$, $\tilde{g}$, and $\tilde{f}\ast\tilde{g}$;
+and deduce the theorem for $f$, $g$, and $f\ast g$.
+By Tonelli's theorem,
+\begin{displaymath}
+\int\left(\int|f(x-y)g(y)|dy\right)dx
+=\int\left(\int|f(x-y)|dx\right)|g(y)|dy
+=\|f\|_1\|g\|_1\,,
+\end{displaymath}
+thus the function $(x,y)\mapsto f(x-y)g(y)$
+belongs to $L^1(\Rset^n\times\Rset^n)$.
+By Fubini's theorem,
+the function $y\mapsto f(x-y)g(y)$
+belongs to $L^1(\Rset^n)$ for almost all $x$,
+and $x\mapsto(f\ast g)(x)$ belongs to $L^1(\Rset^n)$;
+plus,
+\begin{displaymath}
+\|f\ast g\|_1
+\leq\int\int|f(x-y)g(y)|dydx
+=\|f\|_1\|g\|_1\;.
+\end{displaymath}
+Suppose now $q>1$;
+choose $q'$ so that $1/q + 1/q' = 1$.
+By the argument above,
+\begin{math}
+y \mapsto |f(x-y)| \cdot |g(y)|^q
+\end{math}
+belongs to $L^1$ for almost all $x$:
+for those $x$, put
+\begin{math}
+u(y) = |f(x-y)|^{1/q'},
+v(y) = |f(x-y)|^{1/q}|g(y)|.
+\end{math}
+Then $u \in L^{q'}$ and $v \in L^q$ with $1/q' + 1/q = 1$,
+so $uv \in L^1$ and
+\begin{math}
+\|uv\|_1 \leq \|u\|_{q'}\|v\|_q :
+\end{math}
+but $uv = |f(x-y)g(y)|$, so point~\ref{it:L1} of the theorem is proved.
+By H\"older's inequality,
+\begin{displaymath}
+\left| \int f(x-y)g(y)dy \right|
+\leq
+\int |f(x-y)g(y)| dy
+\leq
+\|f\|_1^{1/q'} \left( \int |f(x-y)| \cdot |g(y)|^q dy \right)^{1/q}
+\;:
+\end{displaymath}
+but we know that $|f| \ast |g|^q \in L^1$,
+so $f \ast g \in L^q$ and point~\ref{it:Lr} is also proved.
+Finally,
+\begin{displaymath}
+\|f \ast g\|_q^q
+\leq
+\|f\|_1^{q/q'} \| |f| \ast |g|^q \|_1
+\leq
+\|f\|_1^{q/q'} \| f \|_1 \| g \|_q^q
+=
+\|f\|_1^{1+q/q'} \|g\|_q^q
+\;:
+\end{displaymath}
+but $1/q + 1/q' = 1$ means $q+q' = qq'$ and thus $1+q/q' = q$,
+so that point~\ref{it:cpq} is also proved.
+
+\begin{thebibliography}{99}
+
+\bibitem{gilardi}
+G. Gilardi.
+\textit{Analisi tre.}
+McGraw-Hill 1994.
+
+\bibitem{rudin}
+W. Rudin.
+\textit{Real and complex analysis.}
+McGraw-Hill 1987.
+
+\bibitem{young1912}
+W. H. Young.
+On the multiplication of successions of Fourier constants.
+\textit{Proc. Roy. Soc. Lond. Series A} \textbf{87} (1912) 331--339.
+
+\end{thebibliography}
+
+%%%%%
+%%%%%
+\end{document}

@@ -1,0 +1,50 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{ProofOfFeketesSubadditiveLemma}
+\pmcreated{2014-03-18 14:41:50}
+\pmmodified{2014-03-18 14:41:50}
+\pmowner{Filipe}{28191}
+\pmmodifier{Filipe}{28191}
+\pmtitle{Proof of Fekete's subadditive lemma}
+\pmrecord{3}{88068}
+\pmprivacy{1}
+\pmauthor{Filipe}{28191}
+\pmtype{Proof}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% need this for including graphics (\includegraphics)
+\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+
+% making logically defined graphics
+%\usepackage{xypic}
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+If there is a $m$ such that $a_m=-\infty$, then, by subadditivity, we have $a_n=-\infty$ for all $n>m$. Then, both sides of the equality are $-\infty$, and the theorem holds.
+So, we suppose that $a_n \in \textbf{R}$ for all $n$. Let $L=\inf_n \frac{a_n}{n}$ and let $B$ be any number greater than $L$. Choose $k\geq 1$ such that 
+$$\frac{a_k}{k}<B$$
+For $n>k$, we have, by the division algorithm there are integers $p_n$ and $q_n$ such that $n=p_nk+q_n$, and $0\leq q_n \leq k-1$.
+Applying the definition of subadditivity many times we obtain:
+$$a_n=a_{p_nk+q_n}\leq a_{p_nk}+a_{q_n} \leq p_na_k+a_{q_n}$$
+So, dividing by $n$ we obtain:
+$$ \frac{a_n}{n} \leq \frac{p_nk}{n} \frac{a_k}{k}+\frac{a_{q_n}}{n}$$
+When $n$ goes to infinity, $\frac{p_nk}{n}$ converges to $1$ and $\frac{a_{q_n}}{n}$ converges to zero, because the numerator is bounded by the maximum of $a_i$ with $0\leq i \leq k-1$. So, we have, for all $B>L$:
+$$L\leq \lim_n \frac{a_n}{n} \leq \frac{a_k}{k} < B$$
+Finally, let $B$ go to $L$ and we obtain
+$$L=\inf_n \frac{a_n}{n}=\lim_n \frac{a_n}{n}$$
+\end{document}

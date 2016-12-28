@@ -1,0 +1,47 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{VonNeumannsErgodicTheorem}
+\pmcreated{2014-03-18 14:02:09}
+\pmmodified{2014-03-18 14:02:09}
+\pmowner{Filipe}{28191}
+\pmmodifier{Filipe}{28191}
+\pmtitle{Von Neumann's ergodic theorem}
+\pmrecord{6}{88070}
+\pmprivacy{1}
+\pmauthor{Filipe}{28191}
+\pmtype{Theorem}
+\pmrelated{Birkhoff ergodic theorem}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% need this for including graphics (\includegraphics)
+\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+
+% making logically defined graphics
+%\usepackage{xypic}
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+Let $U:H\rightarrow H$ be an isometry in a Hilbert space $H$. Consider the subspace $I(U)=\{ v \in H: Uv=v \}$, called the space of invariant vectors. Denote by $P$ the orthogonal projection over the subspace $I(U)$. Then,
+$$\lim_{n\rightarrow \infty} \frac{1}{n} \sum_{j=0}^{n-1} U^j(v)=P(v), \forall v \in H$$
+
+This general theorem for Hilbert spaces can be used to obtain an ergodic theorem for the $L^2(\mu)$ space by taking $H$ to be the $L^2(\mu)$ space, and $U$ to be the composition operator (also called Koopman operator) associated to a transformation $f:M\rightarrow M$ that preserves a measure $\mu$, i.e., $U_f(\psi)=\psi \circ f$, where $\psi:M\rightarrow \textbf{R}$. The space of invariant functions is the set of functions $\psi$ such that $\psi \circ f = \psi$ almost everywhere. For any $\psi \in L^2(\mu)$, the sequence:
+$$\lim_{n\rightarrow \infty} \frac{1}{n} \sum_{j=0}^{n-1} \psi \circ f^j$$
+converges in $L^2(\mu)$ to the orthogonal projection $\tilde{\psi}$ of the function $\psi$ over the space of invariant functions.
+
+The $L^2(\mu)$ version of the ergodic theorem for Hilbert spaces can be derived directly from the more general Birkhoff ergodic theorem, which asserts pointwise convergence instead of convergence in $L^2(\mu)$. Actually, from Birkhoff ergodic theorem one can derive a version of the ergodic theorem where convergence in $L^p(\mu)$ holds, for any $p> 1$.
+\end{document}

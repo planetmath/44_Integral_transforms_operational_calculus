@@ -1,0 +1,55 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{MellinsInverseFormula}
+\pmcreated{2013-03-22 14:23:02}
+\pmmodified{2013-03-22 14:23:02}
+\pmowner{pahio}{2872}
+\pmmodifier{pahio}{2872}
+\pmtitle{Mellin's inverse formula}
+\pmrecord{13}{35877}
+\pmprivacy{1}
+\pmauthor{pahio}{2872}
+\pmtype{Result}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{44A10}
+\pmsynonym{inverse Laplace transformation}{MellinsInverseFormula}
+\pmsynonym{Bromwich integral}{MellinsInverseFormula}
+\pmsynonym{Fourier-Mellin integral}{MellinsInverseFormula}
+\pmrelated{InverseLaplaceTransformOfDerivatives}
+\pmrelated{HjalmarMellin}
+\pmrelated{TelegraphEquation}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+\begin{document}
+It may be proven, that if a function $F(s)$ has the {\em inverse Laplace transform} $f(t)$, i.e. a piecewise continuous and exponentially \PMlinkescapetext{restricted} real function $f$ satisfying the condition
+   $$\mathcal{L}\{f(t)\} = F(s),$$
+then $f(t)$ is uniquely determined when not regarded as different such functions which differ from each other only in a point set having Lebesgue measure zero.  
+
+The inverse Laplace transform is directly given by {\em Mellin's inverse formula}
+  $$f(t)= \frac{1}{2\pi i}\int_{\gamma-i\infty}^{\gamma+i\infty}e^{st}F(s)\,ds,$$
+by the Finn R. H. Mellin (1854---1933).\, Here it must be integrated along a straight line parallel to the imaginary axis and intersecting the real axis in the point $\gamma$ which must be chosen so that it is greater than the real parts of all singularities of $F(s)$.
+
+In practice, computing the complex integral can be done by using the Cauchy residue theorem.
+%%%%%
+%%%%%
+\end{document}

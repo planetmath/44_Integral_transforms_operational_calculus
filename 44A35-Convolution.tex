@@ -1,0 +1,137 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{Convolution}
+\pmcreated{2013-03-22 12:32:45}
+\pmmodified{2013-03-22 12:32:45}
+\pmowner{PrimeFan}{13766}
+\pmmodifier{PrimeFan}{13766}
+\pmtitle{convolution}
+\pmrecord{31}{32790}
+\pmprivacy{1}
+\pmauthor{PrimeFan}{13766}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{44A35}
+\pmclassification{msc}{94A12}
+\pmsynonym{convolve}{Convolution}
+\pmsynonym{fold}{Convolution}
+\pmsynonym{convolved}{Convolution}
+\pmsynonym{folded}{Convolution}
+\pmrelated{LogarithmicConvolution}
+\pmrelated{LaplaceTransformOfConvolution}
+\pmrelated{GroupoidCConvolutionAlgebra}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+%\usepackage{psfrag}
+%\usepackage{graphicx}
+%%%\usepackage{xypic}
+\begin{document}
+\PMlinkescapeword{image}
+\PMlinkescapeword{fields}
+\PMlinkescapeword{relation}
+\PMlinkescapeword{inverse}
+\PMlinkescapeword{measures}
+\PMlinkescapeword{connection}
+\PMlinkescapeword{edges}
+\PMlinkescapeword{region}
+
+\paragraph{Introduction}
+
+The \emph{convolution} of two functions $f,g : \Bbb{R} \rightarrow \Bbb{R}$ is the function
+
+\[
+(f \ast g)(u) = \int_{-\infty}^\infty f(x)g(u-x)dx.
+\]
+
+$(f \ast g)(u)$ is the sum of all the terms $f(x)g(y)$ where $x + y = u$. Such sums occur when investigating sums of random variables, and discrete versions appear in the coefficients of products of polynomials and power series. Convolution is an important tool in data processing, in particular in digital signal and image processing. We will first define the concept in various general settings, discuss its properties and then list several convolutions of probability distributions.
+
+\paragraph{Definitions}
+
+If $G$ is a \PMlinkname{locally compact (topological) Abelian group}{LocallyCompactGroupoids} with Haar measure $\mu$ and $f$ and $g$ are measurable functions on $G$, we define the convolution
+
+\[
+(f \ast g)(u) := \int_G f(x)g(u - x)d\mu(x)
+\]
+
+whenever the right hand side integral exists (this is for instance the case if $f\in L^p(G,\mu)$, $g\in L^q(G,\mu)$ and $1/p + 1/q = 1$).
+
+The case $G = \Bbb{R}^n$ is the most important one, but $G=\Bbb{Z}$ is also useful, since it recovers the convolution of sequences which occurs when computing the coefficients of a product of polynomials or power series. The case $G=\Bbb{Z}_n$ yields the so-called cyclic convolution which is often discussed in connection with the discrete Fourier transform. Based on this definition one also obtains the 
+\PMlinkname{groupoid C*--convolution algebra}{GroupoidCConvolutionAlgebra}
+
+The (Dirichlet) convolution of multiplicative functions considered in number theory does not quite fit the above definition, since there the functions are defined on a commutative monoid (the natural numbers under multiplication) rather than on an abelian group.
+
+If $X$ and $Y$ are independent random variables with probability densities $f_X$ and $f_Y$ respectively, and if $X+Y$ has a probability density, then this density is given by the convolution $f_X \ast f_Y$. This motivates the following definition: for probability distributions  $P$ and $Q$ on $\Bbb{R}^n$, the convolution $P \ast Q$ is the probability distribution on $\Bbb{R}^n$ given by
+
+\[
+(P \ast Q)(A) := (P \times Q)\big( \{ (x,y) \mid x+y\in A \}\big) = \int_{\mathbb{R}^n} Q(A-x) \, dP(x) 
+\]
+
+for every Borel set $A$.  The last equation is the result of Fubini's theorem.
+
+The convolution of two distributions $u$ and $v$ on $\Bbb{R}^n$ is defined by
+
+\[
+(u \ast v)(\phi) = u( \psi)
+\]
+
+for any test function $\phi$ for $v$, assuming that $\psi(t) := v(\phi(\cdot + t))$ is a suitable test function for $u$.
+
+\paragraph{Properties}
+
+The convolution operation, when defined, is commutative, associative and distributive with respect to addition. For any $f$ we have
+\[f \ast \delta = f,\]
+where $\delta$ is the Dirac delta distribution. The Fourier transform $F$ converts the convolution of two functions into their pointwise multiplication:
+\[F(f \ast g) = F(f) \cdot F(g),\]
+which provides a great simplification in the computation of convolution.  
+Because of the availability of the Fast Fourier Transform and its inverse, this latter relation is often used to quickly compute discrete convolutions, and in fact the fastest known algorithms for the multiplication of numbers and polynomials are based on this idea.
+
+\paragraph{Some convolutions of probability distributions}
+
+\begin{itemize}
+
+\item The convolution of two independent normal distributions with zero mean and variances $\sigma_1^2$ and $\sigma_2^2$ is a normal distribution with zero mean and variance $\sigma^2 = \sigma_1^2 + \sigma_2^2$.
+
+\item The convolution of two $\chi^2$ distributions with $f_1$ and $f_2$ degrees of freedom is a $\chi^2$ distribution with $f_1 + f_2$ degrees of freedom.
+
+\item The convolution of two Poisson distributions with parameters $\lambda_1$  and $\lambda_2$  is a Poisson distribution with parameter $\lambda = \lambda_1 + \lambda_2$.
+
+\item The convolution of an exponential and a normal distribution is approximated by another exponential distribution. If the original exponential distribution has density
+
+\[ f(x)=\frac{e^{-x/\tau}}{\tau} \;\;\; (x \ge 0) \text{ or } f(x)=0 \;\;\; (x < 0) , \]
+
+and the normal distribution has zero mean and variance $\sigma^2$, then for $u \gg \sigma$ the probability density of the sum is 
+
+\[
+f(u) \approx \frac{e^{-u/\tau + \sigma^2/(2\tau^2)}}{\sigma \tau \sqrt{2\pi}}
+\]
+
+In a semi-logarithmic diagram where $\log(f_X(x))$ is plotted versus $x$ and $\log (f(u))$ versus $u$, the latter lies by the amount $\sigma^2/(2\tau^2)$ higher than the former but both are represented by parallel straight lines, the slope of which is determined by the parameter $\tau$.
+
+\item  The convolution of a uniform and a normal distribution results in a quasi-uniform distribution smeared out at its edges. If the original distribution is uniform in the region $a \le x < b$  and vanishes elsewhere and the normal distribution has zero mean and variance $\sigma^2$, the probability density of the sum is
+
+\[
+f(u) = \frac{\psi_0((u-a)/\sigma)-\psi_0((u-b)/\sigma)}{b-a},
+\]
+
+where
+
+\[
+\psi_0(x) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^x e^{-t^2/2} dt
+\]
+
+is the distribution function of the standard normal distribution. For $\sigma \rightarrow 0$, the function $f(u)$ vanishes for $u<a$ and $u>b$ and is equal to $1/(b-a)$ in between. For finite $\sigma$  the sharp steps at $a$ and $b$ are rounded off over a width of the order $2\sigma$.
+
+\end{itemize}
+
+\paragraph{References}
+
+\begin{itemize}
+\item Adapted with permission from The Data Analysis Briefbook
+(\PMlinkexternal{http://rkb.home.cern.ch/rkb/titleA.html}{http://rkb.home.cern.ch/rkb/titleA.html})
+\end{itemize}
+%%%%%
+%%%%%
+\end{document}

@@ -1,0 +1,84 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{LaplaceTransformOfCosineAndSine}
+\pmcreated{2013-03-22 18:18:27}
+\pmmodified{2013-03-22 18:18:27}
+\pmowner{pahio}{2872}
+\pmmodifier{pahio}{2872}
+\pmtitle{Laplace transform of cosine and sine}
+\pmrecord{8}{40929}
+\pmprivacy{1}
+\pmauthor{pahio}{2872}
+\pmtype{Derivation}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{44A10}
+\pmsynonym{Laplace transform of sine and cosine}{LaplaceTransformOfCosineAndSine}
+%\pmkeywords{Laplace transform of cosine}
+%\pmkeywords{Laplace transform of sine}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+ \usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\theoremstyle{definition}
+\newtheorem*{thmplain}{Theorem}
+
+\begin{document}
+We start from the easily \PMlinkescapetext{derivable} formula
+\begin{align}
+e^{\alpha t} \;\curvearrowleft\; \frac{1}{s\!-\!\alpha} \qquad (s > \alpha),
+\end{align}
+where the curved \PMlinkescapetext{arrow points} from the Laplace-transformed function to the original function.\, Replacing $\alpha$ by $-\alpha$ we can write the second formula
+\begin{align}
+e^{-\alpha t} \;\curvearrowleft\; \frac{1}{s\!+\!\alpha} \qquad (s > -\alpha).
+\end{align}
+Adding (1) and (2) and dividing by 2 we obtain (remembering the linearity of the Laplace transform)
+$$\frac{e^{\alpha t}\!+\!e^{-\alpha t}}{2} \;\curvearrowleft\; 
+\frac{1}{2}\!\left(\frac{1}{s\!-\!\alpha}\!+\!\frac{1}{s\!+\!\alpha}\right),$$
+i.e.
+\begin{align}
+\mathcal{L}\{\cosh{\alpha t}\} = \frac{s}{s^2\!-\!\alpha^2}.
+\end{align}
+Similarly, subtracting (1) and (2) and dividing by 2 give
+\begin{align}
+\mathcal{L}\{\sinh{\alpha t}\} = \frac{a}{s^2\!-\!\alpha^2}.
+\end{align}
+The formulae (3) and (4) are valid for\, $s > |\alpha|$.\\
+
+
+There are the hyperbolic identities
+$$\cosh{it} = \cos{t}, \quad \frac{1}{i}\sinh{it} = \sin{t}$$
+which enable the transition from hyperbolic to trigonometric functions.\, If we choose\, $\alpha := ia$\, in (3), we may calculate
+$$\cos{at} = \cosh{iat} \;\curvearrowleft\; \frac{s}{s^2\!-\!(ia)^2} = \frac{s}{s^2+a^2},$$
+the formula (4) analogously gives
+$$\sin{at} = \frac{1}{i}\sinh{iat} \;\curvearrowleft\; \frac{1}{i}\!\cdot\!\frac{ia}{s^2\!-\!(ia)^2} = \frac{a}{s^2+a^2}.$$
+Accordingly, we have derived the Laplace transforms
+\begin{align}
+\mathcal{L}\{\cos{at}\} = \frac{s}{s^2\!+\!a^2},
+\end{align}
+\begin{align}
+\mathcal{L}\{\sin{at}\} = \frac{a}{s^2\!+\!a^2},
+\end{align}
+which are true for\, $s > 0$.
+
+%%%%%
+%%%%%
+\end{document}

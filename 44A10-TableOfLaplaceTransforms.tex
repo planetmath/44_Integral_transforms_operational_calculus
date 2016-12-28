@@ -1,0 +1,150 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{TableOfLaplaceTransforms}
+\pmcreated{2014-03-10 19:51:28}
+\pmmodified{2014-03-10 19:51:28}
+\pmowner{CWoo}{3771}
+\pmmodifier{pahio}{2872}
+\pmtitle{table of Laplace transforms}
+\pmrecord{57}{40588}
+\pmprivacy{1}
+\pmauthor{CWoo}{2872}
+\pmtype{Feature}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{44A10}
+\pmrelated{LaplaceTransformOfIntegralSine}
+\pmrelated{TelegraphEquation}
+\pmrelated{InverseLaplaceTransformOfDerivatives}
+\pmrelated{IntegralTables}
+\pmrelated{UsingLaplaceTransformToInitialValueProblems}
+\pmrelated{RulesForLaplaceTransform}
+\pmrelated{ExponentialIntegral}
+\pmrelated{IntegrationOfLaplaceTransformWithRespectToParameter}
+\pmrelated{Lapla}
+
+\usepackage{amssymb,amscd}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{tabls}
+%   \usepackage{multirow}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+% making logically defined graphics
+%%\usepackage{xypic}
+\usepackage{pst-plot}
+
+% define commands here
+\newcommand*{\abs}[1]{\left\lvert #1\right\rvert}
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}
+\newtheorem{ex}{Example}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\mpdiff}[3]{\frac{\partial^#1 #2}{\partial #3^#1}}
+\begin{document}
+Below are tables of \PMlinkname{Laplace transforms}{LaplaceTransform}; one lists some of the common properties, and the other lists some common examples.   
+
+\subsubsection*{Properties}
+\begin{center}
+\begin{tabular}{|c|c|p{4cm}|c|}
+\hline\hline
+Original & Transformed & comment & derivation \\
+\hline\hline
+$af(t)+bg(t)$ & $a\mathcal{L}\{f(t)\}+b\mathcal{L}\{g(t)\}$ & linearity & \\
+\hline
+$f(t)*g(t)$ & $\mathcal{L}\{f(t)\}\mathcal{L}\{g(t)\}$ & convolution property & \PMlinkname{here}{LaplaceTransformOfConvolution}\\
+\hline
+$\displaystyle{\int_a^bf(t,x)\,dx}$ & $\displaystyle{\int_a^b\mathcal{L}\{f(t,x)\}\,dx}$ 
+& integration with respect to a parametre & \PMlinkname{here}{IntegrationOfLaplaceTransformWithRespectToParameter}\\
+\hline
+$\displaystyle{\frac{\partial}{\partial x}f(t,x)}$ & $\displaystyle{\frac{\partial}{\partial x}\mathcal{L}\{f(t,x)\}}$ & diffentiation with respect to a parameter & \PMlinkname{here}{DifferentiationOfLaplaceTransformWithRespectToParameter}\\
+\hline
+$f(\displaystyle{\frac{t}{a}})$ & $aF(as)$ & $\mathcal{L}\{f(t)\} = F(s)$  
+& \PMlinkname{here}{RulesForLaplaceTransform}\\
+\hline
+$e^{at}f(t)$ & $F(s-a)$ & $\mathcal{L}\{f(t)\} = F(s)$ & \PMlinkname{here}{RulesForLaplaceTransform}\\
+\hline
+$f(t-a)$ & $e^{-as}F(s)$ & $\mathcal{L}\{f(t)\} = F(s)$ & \PMlinkname{here}{DelayTheorem}\\
+\hline
+$t^nf(t)$ & $(-1)^nF^{(n)}(s)$ & $\mathcal{L}\{f(t)\} = F(s)$ & \PMlinkname{here}{LaplaceTransformOfTnft}\\
+\hline
+$\displaystyle\frac{f(t)}{t}$ & $\displaystyle\int_s^\infty F(u)\,du$ & $\mathcal{L}\{f(t)\} = F(s)$ & 
+\PMlinkname{here}{LaplaceTransformOfFracftt}\\
+\hline
+$\displaystyle{\int_0^tf(u)\,du}$ & $\displaystyle{\frac{F(s)}{s}}$ & $\mathcal{L}\{f(t)\} = F(s)$ & \PMlinkname{here}{LaplaceTransformOfIntegral}\\
+\hline
+$f'(t)$ & $sF(s)-\lim_{x\to0+}f(x)$ & $\mathcal{L}\{f(t)\} = F(s)$ & \PMlinkname{here}{LaplaceTransformOfDerivative}\\
+\hline
+$f''(t)$ & $s^2F(s)-s\lim_{x\to0+}f(x)-\lim_{x\to0+}f'(x)$ & $\mathcal{L}\{f(t)\} = F(s)$ & \PMlinkname{here}{LaplaceTransformsOfDerivatives}\\
+\hline
+
+\end{tabular}
+\end{center}
+
+\subsubsection*{Examples}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline\hline
+$f(t)$ & $\mathcal{L}\{f(t)\}$ & conditions & explanation & derivation \\
+\hline\hline
+$e^{at}$ & $\displaystyle{\frac{1}{s-a}}$ & $s>a$ & & trivial\\
+\hline
+$\cos{at}$ & $\displaystyle{\frac{s}{s^{2}+a^{2}}}$ & $s>0$ & & \PMlinkname{here}{LaplaceTransformOfCosineAndSine}\\
+\hline
+$\sin{at}$ & $\displaystyle{\frac{a}{s^{2}+a^{2}}}$ & $s>0$ & & \PMlinkname{here}{LaplaceTransformOfCosineAndSine}\\
+\hline
+$\cosh{at}$ & $\displaystyle{\frac{s}{s^{2}-a^{2}}}$ & $s>|a|$ & & \PMlinkname{here}{LaplaceTransformOfCosineAndSine}\\
+\hline
+$\sinh{at}$ & $\displaystyle{\frac{a}{s^{2}-a^{2}}}$ & $s>|a|$ & & \PMlinkname{here}{LaplaceTransformOfCosineAndSine}\\
+\hline
+$\displaystyle\frac{\sin{t}}{t}$ & $\displaystyle\arctan\frac{1}{s}$ & $s>0$ & See sinc function & 
+\PMlinkname{here}{LaplaceTransformOfSineIntegral}\\
+\hline
+$t^r$ & $\displaystyle{\frac{\Gamma(r+1)}{s^{r+1}}}$ & $r>-1,\;\;s>0$ & gamma function $\Gamma$ & 
+\PMlinkname{here}{LaplaceTransformOfPowerFunction}\\
+\hline
+$\displaystyle e^{a^2t}\,{\rm erf}\,a\sqrt{t}$ & $\displaystyle\frac{a}{(s\!-\!a^2)\sqrt{s}}$ & $s>a^2$ & See error function & \PMlinkname{here}{UsingConvolutionToFindLaplaceTransform}\\
+\hline
+$\displaystyle e^{a^2t}\,{\rm erfc}\,a\sqrt{t}$ & $\displaystyle\frac{1}{(a\!+\!\sqrt{s})\sqrt{s}}$ & $s>0$ & See error function & \PMlinkname{here}{UsingConvolutionToFindLaplaceTransform}\\
+\hline
+$\displaystyle\frac{1}{\sqrt{t}}$ & $\displaystyle\sqrt{\frac{\pi}{s}}$ & $s>0$ & & \PMlinkname{here}{LaplaceTransformOfPowerFunction}\\
+\hline
+$J_0(at)$ & $\displaystyle\frac{1}{\sqrt{s^2+a^2}}$ & $s>0$ & Bessel function $J_0$ & \PMlinkname{here}{InverseLaplaceTransformOfDerivatives}\\
+\hline
+$e^{-t^2}$ & $\displaystyle\frac{\sqrt{\pi}}{2}e^\frac{s^2}{4}\mathrm{erfc}\Big(\frac{s}{2}\Big)$ & $s>0$ & See error function & \PMlinkname{here}{LaplaceTransformOfAGaussianFunction}\\
+\hline
+$\ln{t}$ & $\displaystyle-\frac{\gamma+\ln{s}}{s}$ & $s>0$ & Euler'sconstant $\gamma$ & \PMlinkname{here}{LaplaceTransformOfLogarithm}\\
+\hline
+$\delta(t)$ & $1$ & & Dirac delta function & \PMlinkname{here}{laplacetransformofdiracdelta}\\
+\hline
+\end{tabular}
+\end{center}
+
+\subsubsection*{Rational Functions}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline\hline
+$f(t)$ & $\mathcal{L}\{f(t)\}$ & conditions & explanation & derivation \\
+\hline\hline
+1 & $\displaystyle{1 \over s}$ & & & \\ 
+\hline
+$t$ & $\displaystyle{1 \over s^2}$ & & &\PMlinkname{here}{LaplaceTransformOfIntegral}\\ \hline
+$\displaystyle{t^{n-1} \over (n-1)!}$ & $\displaystyle{1 \over s^n}$ & & &\PMlinkname{here}{LaplaceTransformOfIntegral} \\ \hline
+$\displaystyle{1 \over t+a}$ & $e^{as} {\rm E}_1(as)$ & $a > 0$ & exponential integral ${\rm E}_1$ & \PMlinkname{here}{exponentialintegral}\\ \hline
+$\displaystyle{1 \over (t+a)^2}$ & $\displaystyle{1 \over a}-se^{as}{\rm E}_1(as)$ & $a > 0$ & &\PMlinkname{here}{exponentialintegral}\\ 
+\hline
+$\displaystyle{1 \over (t+a)^n}$ & $a^{1-n} e^{as} E_n (as)$ & $a > 0,\;\; n \in \mathbb{N}$ & ? & \\ 
+\hline
+$L_n(t)$ & $\displaystyle\frac{1}{s}\!\left(\!\frac{s-1}{s}\!\right)^n$ & $s > 0$ & Laguerre polynomial $L_n$ & \\ \hline
+\end{tabular}
+\end{center}
+%%%%%
+%%%%%
+\end{document}

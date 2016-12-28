@@ -1,0 +1,85 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{LaplaceTransform}
+\pmcreated{2014-03-10 10:50:28}
+\pmmodified{2014-03-10 10:50:28}
+\pmowner{rspuzio}{6075}
+\pmmodifier{pahio}{2872}
+\pmtitle{Laplace transform}
+\pmrecord{26}{34343}
+\pmprivacy{1}
+\pmauthor{rspuzio}{2872}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{44A10}
+\pmrelated{DiscreteFourierTransform}
+\pmrelated{UsingLaplaceTransformToInitialValueProblems}
+\pmrelated{UsingLaplaceTransformToSolveHeatEquation}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+\begin{document}
+Let $f(t)$ be a function defined on the interval \,$[0,\,\infty)$.  The
+\emph{Laplace transform} of $f(t)$ is the function $F(s)$ defined by
+\[
+F(s)\,=\,\int_{0}^{\infty}e^{-st} f(t)\,dt,
+\]
+provided that the integral converges. \footnote{Depending on the definition of
+integral one is using, one may prefer to define the Laplace transform as
+$\lim_{x \to 0+} \int_{x}^{\infty}e^{-st} f(t)\,dt$}  It suffices that $f$ be defined when $t>0$ and $s$ can be complex.  We will 
+usually denote the Laplace transform of $f$ by $\mathcal{L}\{f\}$.  Some
+of the most common Laplace transforms are:
+
+\begin{enumerate}
+\item $\displaystyle\mathcal{L}\{e^{at}\}\,=\,\frac{1}{s-a},\;\; s>a$
+
+\item $\displaystyle\mathcal{L}\{\cos(bt)\}\,=\,\frac{s}{s^{2}+b^{2}},\;\; s>0$
+
+\item $\displaystyle\mathcal{L}\{\sin(bt)\}\,=\,\frac{b}{s^{2}+b^{2}},\;\; s>0$
+
+\item $\displaystyle\mathcal{L}\{t^{n}\}\,=\,\frac{\Gamma(n+1)}{s^{n+1}},\;\; s>0,\; n>-1.$
+
+\item $\displaystyle\mathcal{L}\{f'\}\,=\, s\mathcal{L}\{f\}-\lim_{x \to 0+}f(x)$
+\end{enumerate}
+
+For more particular Laplace transforms, see the table of Laplace 
+transforms.\\
+
+Notice the Laplace transform is a linear transformation.  It is worth noting that, if 
+ $$\int_{0}^{\infty}e^{-st}|f(t)|\,dt < \infty$$
+for some\, $s \in \mathbb{R}$, then $\mathcal{L}\{f\}$ is an analytic function in the complex half-plane 
+$\{z \mid\; \Re z > s\}$.
+
+Much like the Fourier transform, the Laplace transform has a convolution.  However, the form of the convolution used is different.
+$$\mathcal{L}\{f*g\} = \mathcal{L}\{f\} \mathcal{L}\{g\}$$
+where
+$$(f*g) (t) = \int_0^t f(t-s) g(s) \, ds$$
+and
+$$\mathcal{L}\{fg\}(s) = \int_{c - i \infty}^{c + i \infty} \mathcal{L}\{f\}(z) \mathcal{L}\{g\}(s-z) \, dz$$
+
+The most popular usage of the Laplace transform is to solve 
+initial value problems by taking the Laplace transform of both 
+sides of an ordinary differential equation; see the entry 
+``\PMlinkname{image equation}{ImageEquation}''.
+%%%%%
+%%%%%
+\end{document}

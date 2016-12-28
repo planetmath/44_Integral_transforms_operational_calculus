@@ -1,0 +1,43 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{FeketesSubadditiveLemma}
+\pmcreated{2014-03-19 22:15:10}
+\pmmodified{2014-03-19 22:15:10}
+\pmowner{Filipe}{28191}
+\pmmodifier{Filipe}{28191}
+\pmtitle{Fekete's subadditive lemma}
+\pmrecord{4}{88067}
+\pmprivacy{1}
+\pmauthor{Filipe}{28191}
+\pmtype{Theorem}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% need this for including graphics (\includegraphics)
+\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+
+% making logically defined graphics
+%\usepackage{xypic}
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+Let $(a_n)_n$ be a subadditive sequence in $[-\infty,\infty)$. Then, the following limit exists in $[-\infty,\infty)$ and equals the infimum of the same sequence:
+$$\lim_{n} \frac{a_n}{n}= \inf_n \frac{a_n}{n}$$
+Although the lemma is usually stated for subadditive sequences, an analogue conclusion is valid for superadditive sequences. In that case, for $(a_n)_n$ a subadditive sequence in $(-\infty,\infty]$, one has:
+$$\lim_n \frac{a_n}{n}=\sup_n \frac{a_n}{n}$$
+The proof of the superadditive case is obtained by taking the symmetric sequence $(-a_n)_n$ and applying the subadditive version of the theorem.
+\end{document}

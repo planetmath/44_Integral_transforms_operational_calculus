@@ -1,0 +1,63 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{LaplaceTransformOfLogarithm}
+\pmcreated{2013-03-22 18:26:01}
+\pmmodified{2013-03-22 18:26:01}
+\pmowner{pahio}{2872}
+\pmmodifier{pahio}{2872}
+\pmtitle{Laplace transform of logarithm}
+\pmrecord{7}{41091}
+\pmprivacy{1}
+\pmauthor{pahio}{2872}
+\pmtype{Theorem}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{44A10}
+\pmsynonym{Laplace transform of logarithm function}{LaplaceTransformOfLogarithm}
+\pmrelated{PowerFunction}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+ \usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\theoremstyle{definition}
+\newtheorem*{thmplain}{Theorem}
+
+\begin{document}
+\textbf{Theorem.}\; The Laplace transform of the natural logarithm function is
+$$\mathcal{L}\{\ln{t}\} \;=\; \frac{\Gamma\,'(1)-\ln{s}}{s}$$
+where $\Gamma$ is Euler's gamma function.\\
+
+{\em Proof.}\; We use the \PMlinkname{Laplace transform of the power function}{LaplaceTransformOfPowerFunction}
+$$\int_0^\infty e^{-st}t^a\,dt \;=\; \frac{\Gamma(a\!+\!1)}{s^{a+1}}$$
+by differentiating it with respect to the parametre $a$:
+$$\int_0^\infty e^{-st}t^a\ln{t}\;dt \;=\; \frac{\Gamma'(a\!+\!1)s^{a+1}-\Gamma(a\!+\!1)s^{a+1}\ln{s}}{(s^{a+1})^2}
+\;=\; \frac{\Gamma'(a\!+\!1)-\Gamma(a\!+\!1)\ln{s}}{s^{a+1}}$$
+Setting here\, $a = 0$,\, we obtain
+$$\mathcal{L}\{\ln{t}\} \;=\; \int_0^\infty e^{-st}\ln{t}\;dt \;=\; \frac{\Gamma\,'(1)-1\cdot\ln{s}}{s},$$
+Q.E.D.\\
+
+\textbf{Note.}\; The number $\Gamma'(1)$ is equal the \PMlinkescapetext{negative} of the \PMlinkname{Euler--Mascheroni constant}{EulersConstant}, as is seen in the entry digamma and polygamma functions.
+
+
+
+%%%%%
+%%%%%
+\end{document}
