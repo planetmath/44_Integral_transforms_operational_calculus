@@ -1,0 +1,318 @@
+<!DOCTYPE html><html>
+<head>
+<title>convolution</title>
+<!--Generated on Fri Feb  9 21:33:19 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">convolution</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break">
+</div>
+<section id="S0.SS0.SSS0.Px1" class="ltx_paragraph">
+<h2 class="ltx_title ltx_title_paragraph">Introduction</h2>
+
+<div id="S0.SS0.SSS0.Px1.p1" class="ltx_para">
+<p class="ltx_p">The <em class="ltx_emph ltx_font_italic">convolution</em> of two functions <math id="S0.SS0.SSS0.Px1.p1.m1" class="ltx_Math" alttext="f,g:\mathbb{R}\rightarrow\mathbb{R}" display="inline"><mrow><mrow><mi>f</mi><mo>,</mo><mi>g</mi></mrow><mo>:</mo><mrow><mi>ℝ</mi><mo>→</mo><mi>ℝ</mi></mrow></mrow></math> is the function</p>
+</div>
+<div id="S0.SS0.SSS0.Px1.p2" class="ltx_para">
+<table id="S0.Ex1" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex1.m1" class="ltx_Math" alttext="(f\ast g)(u)=\int_{-\infty}^{\infty}f(x)g(u-x)dx." display="block"><mrow><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>f</mi><mo>∗</mo><mi>g</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msubsup><mo largeop="true" symmetric="true">∫</mo><mrow><mo>-</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>u</mi><mo>-</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo>𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<div id="S0.SS0.SSS0.Px1.p3" class="ltx_para">
+<p class="ltx_p"><math id="S0.SS0.SSS0.Px1.p3.m1" class="ltx_Math" alttext="(f\ast g)(u)" display="inline"><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>f</mi><mo>∗</mo><mi>g</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo stretchy="false">)</mo></mrow></mrow></math> is the sum of all the terms <math id="S0.SS0.SSS0.Px1.p3.m2" class="ltx_Math" alttext="f(x)g(y)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></math> where <math id="S0.SS0.SSS0.Px1.p3.m3" class="ltx_Math" alttext="x+y=u" display="inline"><mrow><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow><mo>=</mo><mi>u</mi></mrow></math>. Such sums occur when investigating sums of random variables, and discrete versions appear in the coefficients of products of polynomials and power series. Convolution is an important tool in data processing, in particular in digital signal and image processing. We will first define the concept in various general settings, discuss its properties and then list several convolutions of probability distributions.</p>
+</div>
+</section>
+<section id="S0.SS0.SSS0.Px2" class="ltx_paragraph">
+<h2 class="ltx_title ltx_title_paragraph">Definitions</h2>
+
+<div id="S0.SS0.SSS0.Px2.p1" class="ltx_para">
+<p class="ltx_p">If <math id="S0.SS0.SSS0.Px2.p1.m1" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math> is a locally compact (topological) Abelian group (<span class="ltx_text ltx_font_typewriter">http://planetmath.org/LocallyCompactGroupoids</span>) with Haar measure <math id="S0.SS0.SSS0.Px2.p1.m2" class="ltx_Math" alttext="\mu" display="inline"><mi>μ</mi></math> and <math id="S0.SS0.SSS0.Px2.p1.m3" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> and <math id="S0.SS0.SSS0.Px2.p1.m4" class="ltx_Math" alttext="g" display="inline"><mi>g</mi></math> are measurable functions on <math id="S0.SS0.SSS0.Px2.p1.m5" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math>, we define the convolution</p>
+</div>
+<div id="S0.SS0.SSS0.Px2.p2" class="ltx_para">
+<table id="S0.Ex2" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex2.m1" class="ltx_Math" alttext="(f\ast g)(u):=\int_{G}f(x)g(u-x)d\mu(x)" display="block"><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>f</mi><mo>∗</mo><mi>g</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo stretchy="false">)</mo></mrow></mrow><mo>:=</mo><mrow><msub><mo largeop="true" symmetric="true">∫</mo><mi>G</mi></msub><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>u</mi><mo>-</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo>𝑑</mo><mi>μ</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<div id="S0.SS0.SSS0.Px2.p3" class="ltx_para">
+<p class="ltx_p">whenever the right hand side integral exists (this is for instance the case if <math id="S0.SS0.SSS0.Px2.p3.m1" class="ltx_Math" alttext="f\in L^{p}(G,\mu)" display="inline"><mrow><mi>f</mi><mo>∈</mo><mrow><msup><mi>L</mi><mi>p</mi></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>G</mi><mo>,</mo><mi>μ</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>, <math id="S0.SS0.SSS0.Px2.p3.m2" class="ltx_Math" alttext="g\in L^{q}(G,\mu)" display="inline"><mrow><mi>g</mi><mo>∈</mo><mrow><msup><mi>L</mi><mi>q</mi></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>G</mi><mo>,</mo><mi>μ</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> and <math id="S0.SS0.SSS0.Px2.p3.m3" class="ltx_Math" alttext="1/p+1/q=1" display="inline"><mrow><mrow><mrow><mn>1</mn><mo>/</mo><mi>p</mi></mrow><mo>+</mo><mrow><mn>1</mn><mo>/</mo><mi>q</mi></mrow></mrow><mo>=</mo><mn>1</mn></mrow></math>).</p>
+</div>
+<div id="S0.SS0.SSS0.Px2.p4" class="ltx_para">
+<p class="ltx_p">The case <math id="S0.SS0.SSS0.Px2.p4.m1" class="ltx_Math" alttext="G=\mathbb{R}^{n}" display="inline"><mrow><mi>G</mi><mo>=</mo><msup><mi>ℝ</mi><mi>n</mi></msup></mrow></math> is the most important one, but <math id="S0.SS0.SSS0.Px2.p4.m2" class="ltx_Math" alttext="G=\mathbb{Z}" display="inline"><mrow><mi>G</mi><mo>=</mo><mi>ℤ</mi></mrow></math> is also useful, since it recovers the convolution of sequences which occurs when computing the coefficients of a product of polynomials or power series. The case <math id="S0.SS0.SSS0.Px2.p4.m3" class="ltx_Math" alttext="G=\mathbb{Z}_{n}" display="inline"><mrow><mi>G</mi><mo>=</mo><msub><mi>ℤ</mi><mi>n</mi></msub></mrow></math> yields the so-called cyclic convolution which is often discussed in connection with the discrete Fourier transform. Based on this definition one also obtains the
+groupoid C*–convolution algebra (<span class="ltx_text ltx_font_typewriter">http://planetmath.org/GroupoidCConvolutionAlgebra</span>)</p>
+</div>
+<div id="S0.SS0.SSS0.Px2.p5" class="ltx_para">
+<p class="ltx_p">The (Dirichlet) convolution of multiplicative functions considered in number theory does not quite fit the above definition, since there the functions are defined on a commutative monoid (the natural numbers under multiplication) rather than on an abelian group.</p>
+</div>
+<div id="S0.SS0.SSS0.Px2.p6" class="ltx_para">
+<p class="ltx_p">If <math id="S0.SS0.SSS0.Px2.p6.m1" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math> and <math id="S0.SS0.SSS0.Px2.p6.m2" class="ltx_Math" alttext="Y" display="inline"><mi>Y</mi></math> are independent random variables with probability densities <math id="S0.SS0.SSS0.Px2.p6.m3" class="ltx_Math" alttext="f_{X}" display="inline"><msub><mi>f</mi><mi>X</mi></msub></math> and <math id="S0.SS0.SSS0.Px2.p6.m4" class="ltx_Math" alttext="f_{Y}" display="inline"><msub><mi>f</mi><mi>Y</mi></msub></math> respectively, and if <math id="S0.SS0.SSS0.Px2.p6.m5" class="ltx_Math" alttext="X+Y" display="inline"><mrow><mi>X</mi><mo>+</mo><mi>Y</mi></mrow></math> has a probability density, then this density is given by the convolution <math id="S0.SS0.SSS0.Px2.p6.m6" class="ltx_Math" alttext="f_{X}\ast f_{Y}" display="inline"><mrow><msub><mi>f</mi><mi>X</mi></msub><mo>∗</mo><msub><mi>f</mi><mi>Y</mi></msub></mrow></math>. This motivates the following definition: for probability distributions <math id="S0.SS0.SSS0.Px2.p6.m7" class="ltx_Math" alttext="P" display="inline"><mi>P</mi></math> and <math id="S0.SS0.SSS0.Px2.p6.m8" class="ltx_Math" alttext="Q" display="inline"><mi>Q</mi></math> on <math id="S0.SS0.SSS0.Px2.p6.m9" class="ltx_Math" alttext="\mathbb{R}^{n}" display="inline"><msup><mi>ℝ</mi><mi>n</mi></msup></math>, the convolution <math id="S0.SS0.SSS0.Px2.p6.m10" class="ltx_Math" alttext="P\ast Q" display="inline"><mrow><mi>P</mi><mo>∗</mo><mi>Q</mi></mrow></math> is the probability distribution on <math id="S0.SS0.SSS0.Px2.p6.m11" class="ltx_Math" alttext="\mathbb{R}^{n}" display="inline"><msup><mi>ℝ</mi><mi>n</mi></msup></math> given by</p>
+</div>
+<div id="S0.SS0.SSS0.Px2.p7" class="ltx_para">
+<table id="S0.Ex3" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex3.m1" class="ltx_Math" alttext="(P\ast Q)(A):=(P\times Q)\big{(}\{(x,y)\mid x+y\in A\}\big{)}=\int_{\mathbb{R}%
+^{n}}Q(A-x)\,dP(x)" display="block"><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>P</mi><mo>∗</mo><mi>Q</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>A</mi><mo stretchy="false">)</mo></mrow></mrow><mo>:=</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>P</mi><mo>×</mo><mi>Q</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo maxsize="120%" minsize="120%">(</mo><mrow><mo stretchy="false">{</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo>∣</mo><mrow><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow><mo>∈</mo><mi>A</mi></mrow><mo stretchy="false">}</mo></mrow><mo maxsize="120%" minsize="120%">)</mo></mrow></mrow><mo>=</mo><mrow><msub><mo largeop="true" symmetric="true">∫</mo><msup><mi>ℝ</mi><mi>n</mi></msup></msub><mrow><mi>Q</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>A</mi><mo>-</mo><mi>x</mi></mrow><mo rspace="4.2pt" stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo>𝑑</mo><mi>P</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<div id="S0.SS0.SSS0.Px2.p8" class="ltx_para">
+<p class="ltx_p">for every Borel set <math id="S0.SS0.SSS0.Px2.p8.m1" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>. The last equation is the result of Fubini’s theorem.
+</p>
+</div>
+<div id="S0.SS0.SSS0.Px2.p9" class="ltx_para">
+<p class="ltx_p">The convolution of two distributions <math id="S0.SS0.SSS0.Px2.p9.m1" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math> and <math id="S0.SS0.SSS0.Px2.p9.m2" class="ltx_Math" alttext="v" display="inline"><mi>v</mi></math> on <math id="S0.SS0.SSS0.Px2.p9.m3" class="ltx_Math" alttext="\mathbb{R}^{n}" display="inline"><msup><mi>ℝ</mi><mi>n</mi></msup></math> is defined by</p>
+</div>
+<div id="S0.SS0.SSS0.Px2.p10" class="ltx_para">
+<table id="S0.Ex4" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex4.m1" class="ltx_Math" alttext="(u\ast v)(\phi)=u(\psi)" display="block"><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>u</mi><mo>∗</mo><mi>v</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ϕ</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ψ</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<div id="S0.SS0.SSS0.Px2.p11" class="ltx_para">
+<p class="ltx_p">for any test function <math id="S0.SS0.SSS0.Px2.p11.m1" class="ltx_Math" alttext="\phi" display="inline"><mi>ϕ</mi></math> for <math id="S0.SS0.SSS0.Px2.p11.m2" class="ltx_Math" alttext="v" display="inline"><mi>v</mi></math>, assuming that <math id="S0.SS0.SSS0.Px2.p11.m3" class="ltx_Math" alttext="\psi(t):=v(\phi(\cdot+t))" display="inline"><mrow><mi>ψ</mi><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo>:=</mo><mi>v</mi><mrow><mo stretchy="false">(</mo><mi>ϕ</mi><mrow><mo stretchy="false">(</mo><mo>⋅</mo><mo>+</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo stretchy="false">)</mo></mrow></mrow></math> is a suitable test function for <math id="S0.SS0.SSS0.Px2.p11.m4" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math>.</p>
+</div>
+</section>
+<section id="S0.SS0.SSS0.Px3" class="ltx_paragraph">
+<h2 class="ltx_title ltx_title_paragraph">Properties</h2>
+
+<div id="S0.SS0.SSS0.Px3.p1" class="ltx_para">
+<p class="ltx_p">The convolution operation, when defined, is commutative, associative and distributive with respect to addition. For any <math id="S0.SS0.SSS0.Px3.p1.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> we have</p>
+<table id="S0.Ex5" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex5.m1" class="ltx_Math" alttext="f\ast\delta=f," display="block"><mrow><mrow><mrow><mi>f</mi><mo>∗</mo><mi>δ</mi></mrow><mo>=</mo><mi>f</mi></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">where <math id="S0.SS0.SSS0.Px3.p1.m2" class="ltx_Math" alttext="\delta" display="inline"><mi>δ</mi></math> is the Dirac delta distribution. The Fourier transform <math id="S0.SS0.SSS0.Px3.p1.m3" class="ltx_Math" alttext="F" display="inline"><mi>F</mi></math> converts the convolution of two functions into their pointwise multiplication:</p>
+<table id="S0.Ex6" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex6.m1" class="ltx_Math" alttext="F(f\ast g)=F(f)\cdot F(g)," display="block"><mrow><mrow><mrow><mi>F</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>f</mi><mo>∗</mo><mi>g</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mi>F</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>f</mi><mo stretchy="false">)</mo></mrow></mrow><mo>⋅</mo><mi>F</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>g</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">which provides a great simplification in the computation of convolution.
+Because of the availability of the Fast Fourier Transform and its inverse, this latter relation is often used to quickly compute discrete convolutions, and in fact the fastest known algorithms for the multiplication of numbers and polynomials are based on this idea.</p>
+</div>
+</section>
+<section id="S0.SS0.SSS0.Px4" class="ltx_paragraph">
+<h2 class="ltx_title ltx_title_paragraph">Some convolutions of probability distributions</h2>
+
+<div id="S0.SS0.SSS0.Px4.p1" class="ltx_para">
+<ul id="I1" class="ltx_itemize">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p">The convolution of two independent normal distributions with zero mean and variances <math id="I1.i1.p1.m1" class="ltx_Math" alttext="\sigma_{1}^{2}" display="inline"><msubsup><mi>σ</mi><mn>1</mn><mn>2</mn></msubsup></math> and <math id="I1.i1.p1.m2" class="ltx_Math" alttext="\sigma_{2}^{2}" display="inline"><msubsup><mi>σ</mi><mn>2</mn><mn>2</mn></msubsup></math> is a normal distribution with zero mean and variance <math id="I1.i1.p1.m3" class="ltx_Math" alttext="\sigma^{2}=\sigma_{1}^{2}+\sigma_{2}^{2}" display="inline"><mrow><msup><mi>σ</mi><mn>2</mn></msup><mo>=</mo><mrow><msubsup><mi>σ</mi><mn>1</mn><mn>2</mn></msubsup><mo>+</mo><msubsup><mi>σ</mi><mn>2</mn><mn>2</mn></msubsup></mrow></mrow></math>.</p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p">The convolution of two <math id="I1.i2.p1.m1" class="ltx_Math" alttext="\chi^{2}" display="inline"><msup><mi>χ</mi><mn>2</mn></msup></math> distributions with <math id="I1.i2.p1.m2" class="ltx_Math" alttext="f_{1}" display="inline"><msub><mi>f</mi><mn>1</mn></msub></math> and <math id="I1.i2.p1.m3" class="ltx_Math" alttext="f_{2}" display="inline"><msub><mi>f</mi><mn>2</mn></msub></math> degrees of freedom is a <math id="I1.i2.p1.m4" class="ltx_Math" alttext="\chi^{2}" display="inline"><msup><mi>χ</mi><mn>2</mn></msup></math> distribution with <math id="I1.i2.p1.m5" class="ltx_Math" alttext="f_{1}+f_{2}" display="inline"><mrow><msub><mi>f</mi><mn>1</mn></msub><mo>+</mo><msub><mi>f</mi><mn>2</mn></msub></mrow></math> degrees of freedom.
+</p>
+</div>
+</li>
+<li id="I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i3.p1" class="ltx_para">
+<p class="ltx_p">The convolution of two Poisson distributions with parameters <math id="I1.i3.p1.m1" class="ltx_Math" alttext="\lambda_{1}" display="inline"><msub><mi>λ</mi><mn>1</mn></msub></math> and <math id="I1.i3.p1.m2" class="ltx_Math" alttext="\lambda_{2}" display="inline"><msub><mi>λ</mi><mn>2</mn></msub></math> is a Poisson distribution with parameter <math id="I1.i3.p1.m3" class="ltx_Math" alttext="\lambda=\lambda_{1}+\lambda_{2}" display="inline"><mrow><mi>λ</mi><mo>=</mo><mrow><msub><mi>λ</mi><mn>1</mn></msub><mo>+</mo><msub><mi>λ</mi><mn>2</mn></msub></mrow></mrow></math>.</p>
+</div>
+</li>
+<li id="I1.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i4.p1" class="ltx_para">
+<p class="ltx_p">The convolution of an exponential and a normal distribution is approximated by another exponential distribution. If the original exponential distribution has density</p>
+</div>
+<div id="I1.i4.p2" class="ltx_para">
+<table id="S0.Ex7" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex7.m1" class="ltx_Math" alttext="f(x)=\frac{e^{-x/\tau}}{\tau}\;\;\;(x\geq 0)\text{ or }f(x)=0\;\;\;(x&lt;0)," display="block"><mrow><mi>f</mi><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>=</mo><mpadded width="+8.3pt"><mfrac><msup><mi>e</mi><mrow><mo>-</mo><mrow><mi>x</mi><mo>/</mo><mi>τ</mi></mrow></mrow></msup><mi>τ</mi></mfrac></mpadded><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>≥</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><mtext> or </mtext><mi>f</mi><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>=</mo><mpadded width="+8.3pt"><mn>0</mn></mpadded><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>&lt;</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<div id="I1.i4.p3" class="ltx_para">
+<p class="ltx_p">and the normal distribution has zero mean and variance <math id="I1.i4.p3.m1" class="ltx_Math" alttext="\sigma^{2}" display="inline"><msup><mi>σ</mi><mn>2</mn></msup></math>, then for <math id="I1.i4.p3.m2" class="ltx_Math" alttext="u\gg\sigma" display="inline"><mrow><mi>u</mi><mo>≫</mo><mi>σ</mi></mrow></math> the probability density of the sum is</p>
+</div>
+<div id="I1.i4.p4" class="ltx_para">
+<table id="S0.Ex8" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex8.m1" class="ltx_Math" alttext="f(u)\approx\frac{e^{-u/\tau+\sigma^{2}/(2\tau^{2})}}{\sigma\tau\sqrt{2\pi}}" display="block"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo stretchy="false">)</mo></mrow></mrow><mo>≈</mo><mfrac><msup><mi>e</mi><mrow><mrow><mo>-</mo><mrow><mi>u</mi><mo>/</mo><mi>τ</mi></mrow></mrow><mo>+</mo><mrow><msup><mi>σ</mi><mn>2</mn></msup><mo>/</mo><mrow><mo stretchy="false">(</mo><mrow><mn>2</mn><mo>⁢</mo><msup><mi>τ</mi><mn>2</mn></msup></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></msup><mrow><mi>σ</mi><mo>⁢</mo><mi>τ</mi><mo>⁢</mo><msqrt><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></msqrt></mrow></mfrac></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<div id="I1.i4.p5" class="ltx_para">
+<p class="ltx_p">In a semi-logarithmic diagram where <math id="I1.i4.p5.m1" class="ltx_Math" alttext="\log(f_{X}(x))" display="inline"><mrow><mi>log</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>f</mi><mi>X</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></math> is plotted versus <math id="I1.i4.p5.m2" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> and <math id="I1.i4.p5.m3" class="ltx_Math" alttext="\log(f(u))" display="inline"><mrow><mi>log</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></math> versus <math id="I1.i4.p5.m4" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math>, the latter lies by the amount <math id="I1.i4.p5.m5" class="ltx_Math" alttext="\sigma^{2}/(2\tau^{2})" display="inline"><mrow><msup><mi>σ</mi><mn>2</mn></msup><mo>/</mo><mrow><mo stretchy="false">(</mo><mrow><mn>2</mn><mo>⁢</mo><msup><mi>τ</mi><mn>2</mn></msup></mrow><mo stretchy="false">)</mo></mrow></mrow></math> higher than the former but both are represented by parallel straight lines, the slope of which is determined by the parameter <math id="I1.i4.p5.m6" class="ltx_Math" alttext="\tau" display="inline"><mi>τ</mi></math>.</p>
+</div>
+</li>
+<li id="I1.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i5.p1" class="ltx_para">
+<p class="ltx_p">The convolution of a uniform and a normal distribution results in a quasi-uniform distribution smeared out at its edges. If the original distribution is uniform in the region <math id="I1.i5.p1.m1" class="ltx_Math" alttext="a\leq x&lt;b" display="inline"><mrow><mi>a</mi><mo>≤</mo><mi>x</mi><mo>&lt;</mo><mi>b</mi></mrow></math> and vanishes elsewhere and the normal distribution has zero mean and variance <math id="I1.i5.p1.m2" class="ltx_Math" alttext="\sigma^{2}" display="inline"><msup><mi>σ</mi><mn>2</mn></msup></math>, the probability density of the sum is</p>
+</div>
+<div id="I1.i5.p2" class="ltx_para">
+<table id="S0.Ex9" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex9.m1" class="ltx_Math" alttext="f(u)=\frac{\psi_{0}((u-a)/\sigma)-\psi_{0}((u-b)/\sigma)}{b-a}," display="block"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mfrac><mrow><mrow><msub><mi>ψ</mi><mn>0</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>u</mi><mo>-</mo><mi>a</mi></mrow><mo stretchy="false">)</mo></mrow><mo>/</mo><mi>σ</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>-</mo><mrow><msub><mi>ψ</mi><mn>0</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>u</mi><mo>-</mo><mi>b</mi></mrow><mo stretchy="false">)</mo></mrow><mo>/</mo><mi>σ</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mrow><mi>b</mi><mo>-</mo><mi>a</mi></mrow></mfrac></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<div id="I1.i5.p3" class="ltx_para">
+<p class="ltx_p">where</p>
+</div>
+<div id="I1.i5.p4" class="ltx_para">
+<table id="S0.Ex10" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex10.m1" class="ltx_Math" alttext="\psi_{0}(x)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{x}e^{-t^{2}/2}dt" display="block"><mrow><mrow><msub><mi>ψ</mi><mn>0</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mfrac><mn>1</mn><msqrt><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></msqrt></mfrac><mo>⁢</mo><mrow><msubsup><mo largeop="true" symmetric="true">∫</mo><mrow><mo>-</mo><mi mathvariant="normal">∞</mi></mrow><mi>x</mi></msubsup><mrow><msup><mi>e</mi><mrow><mo>-</mo><mrow><msup><mi>t</mi><mn>2</mn></msup><mo>/</mo><mn>2</mn></mrow></mrow></msup><mo>⁢</mo><mrow><mo>𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<div id="I1.i5.p5" class="ltx_para">
+<p class="ltx_p">is the distribution function of the standard normal distribution. For <math id="I1.i5.p5.m1" class="ltx_Math" alttext="\sigma\rightarrow 0" display="inline"><mrow><mi>σ</mi><mo>→</mo><mn>0</mn></mrow></math>, the function <math id="I1.i5.p5.m2" class="ltx_Math" alttext="f(u)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo stretchy="false">)</mo></mrow></mrow></math> vanishes for <math id="I1.i5.p5.m3" class="ltx_Math" alttext="u&lt;a" display="inline"><mrow><mi>u</mi><mo>&lt;</mo><mi>a</mi></mrow></math> and <math id="I1.i5.p5.m4" class="ltx_Math" alttext="u&gt;b" display="inline"><mrow><mi>u</mi><mo>&gt;</mo><mi>b</mi></mrow></math> and is equal to <math id="I1.i5.p5.m5" class="ltx_Math" alttext="1/(b-a)" display="inline"><mrow><mn>1</mn><mo>/</mo><mrow><mo stretchy="false">(</mo><mrow><mi>b</mi><mo>-</mo><mi>a</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></math> in between. For finite <math id="I1.i5.p5.m6" class="ltx_Math" alttext="\sigma" display="inline"><mi>σ</mi></math> the sharp steps at <math id="I1.i5.p5.m7" class="ltx_Math" alttext="a" display="inline"><mi>a</mi></math> and <math id="I1.i5.p5.m8" class="ltx_Math" alttext="b" display="inline"><mi>b</mi></math> are rounded off over a width of the order <math id="I1.i5.p5.m9" class="ltx_Math" alttext="2\sigma" display="inline"><mrow><mn>2</mn><mo>⁢</mo><mi>σ</mi></mrow></math>.</p>
+</div>
+</li>
+</ul>
+</div>
+</section>
+<section id="S0.SS0.SSS0.Px5" class="ltx_paragraph">
+<h2 class="ltx_title ltx_title_paragraph">References</h2>
+
+<div id="S0.SS0.SSS0.Px5.p1" class="ltx_para">
+<ul id="I2" class="ltx_itemize">
+<li id="I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I2.i1.p1" class="ltx_para">
+<p class="ltx_p">Adapted with permission from The Data Analysis Briefbook
+(<span class="ltx_text ltx_font_typewriter">http://rkb.home.cern.ch/rkb/titleA.html</span>http://rkb.home.cern.ch/rkb/titleA.html)</p>
+</div>
+</li>
+</ul>
+<table class="ltx_tabular ltx_align_right ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_t">Title</td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">convolution</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Canonical name</td>
+<td class="ltx_td ltx_align_left ltx_border_r">Convolution</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Date of creation</td>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 12:32:45</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Last modified on</td>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 12:32:45</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Owner</td>
+<td class="ltx_td ltx_align_left ltx_border_r">PrimeFan (13766)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Last modified by</td>
+<td class="ltx_td ltx_align_left ltx_border_r">PrimeFan (13766)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Numerical id</td>
+<td class="ltx_td ltx_align_left ltx_border_r">31</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Author</td>
+<td class="ltx_td ltx_align_left ltx_border_r">PrimeFan (13766)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Entry type</td>
+<td class="ltx_td ltx_align_left ltx_border_r">Definition</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 44A35</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 94A12</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Synonym</td>
+<td class="ltx_td ltx_align_left ltx_border_r">convolve</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Synonym</td>
+<td class="ltx_td ltx_align_left ltx_border_r">fold</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Synonym</td>
+<td class="ltx_td ltx_align_left ltx_border_r">convolved</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Synonym</td>
+<td class="ltx_td ltx_align_left ltx_border_r">folded</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">LogarithmicConvolution</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">LaplaceTransformOfConvolution</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">GroupoidCConvolutionAlgebra</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Fri Feb  9 21:33:19 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html><html>
+<head>
+<title>Laplace transform of sine integral</title>
+<!--Generated on Fri Feb  9 21:32:28 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">Laplace transform of sine integral</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break">
+</div>
+<section id="S0.SS1" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">0.1 </span>Derivation of <math id="S0.SS1.m1" class="ltx_Math" alttext="\mathcal{L}\{\mathrm{Si}\,t\}" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">ℒ</mi><mo>⁢</mo><mrow><mo stretchy="false">{</mo><mrow><mpadded width="+1.7pt"><mi>Si</mi></mpadded><mo>⁢</mo><mi>t</mi></mrow><mo stretchy="false">}</mo></mrow></mrow></math>
+</h2>
+
+<div id="S0.SS1.p1" class="ltx_para">
+<p class="ltx_p">If one performs the change of integration variable</p>
+<table id="S0.Ex1" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex1.m1" class="ltx_Math" alttext="u\;=\;tx,\qquad du\;=\;t\,dx" display="block"><mrow><mrow><mpadded width="+2.8pt"><mi>u</mi></mpadded><mo rspace="5.3pt">=</mo><mrow><mi>t</mi><mo>⁢</mo><mi>x</mi></mrow></mrow><mo rspace="22.5pt">,</mo><mrow><mrow><mi>d</mi><mo>⁢</mo><mpadded width="+2.8pt"><mi>u</mi></mpadded></mrow><mo rspace="5.3pt">=</mo><mrow><mpadded width="+1.7pt"><mi>t</mi></mpadded><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">in the defining integral (<span class="ltx_text ltx_font_typewriter">http://planetmath.org/DefiniteIntegral</span>)</p>
+<table id="S0.Ex2" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex2.m1" class="ltx_Math" alttext="\mathrm{Si}\,t\;=\;\int_{0}^{\,t}\!\frac{\sin{u}}{u}\,du," display="block"><mrow><mrow><mrow><mpadded width="+1.7pt"><mi>Si</mi></mpadded><mo>⁢</mo><mpadded width="+2.8pt"><mi>t</mi></mpadded></mrow><mo rspace="5.3pt">=</mo><mrow><mpadded width="-1.7pt"><msubsup><mo largeop="true" symmetric="true">∫</mo><mn>0</mn><mpadded lspace="1.7pt" width="+1.7pt"><mi>t</mi></mpadded></msubsup></mpadded><mrow><mpadded width="+1.7pt"><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mi>u</mi></mrow><mi>u</mi></mfrac></mpadded><mo>⁢</mo><mrow><mo>𝑑</mo><mi>u</mi></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">of the sine integral function, one obtains</p>
+<table id="S0.Ex3" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex3.m1" class="ltx_Math" alttext="\mathrm{Si}\,t\;=\;\int_{0}^{1}\frac{\sin{tx}}{tx}t\,dx\;=\;\int_{0}^{1}\frac{%
+\sin{tx}}{x}\,dx," display="block"><mrow><mrow><mrow><mpadded width="+1.7pt"><mi>Si</mi></mpadded><mo>⁢</mo><mpadded width="+2.8pt"><mi>t</mi></mpadded></mrow><mo rspace="5.3pt">=</mo><mrow><msubsup><mo largeop="true" symmetric="true">∫</mo><mn>0</mn><mn>1</mn></msubsup><mrow><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mrow><mi>t</mi><mo>⁢</mo><mi>x</mi></mrow></mrow><mrow><mi>t</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac><mo>⁢</mo><mpadded width="+1.7pt"><mi>t</mi></mpadded><mo>⁢</mo><mrow><mo>𝑑</mo><mpadded width="+2.8pt"><mi>x</mi></mpadded></mrow></mrow></mrow><mo rspace="5.3pt">=</mo><mrow><msubsup><mo largeop="true" symmetric="true">∫</mo><mn>0</mn><mn>1</mn></msubsup><mrow><mpadded width="+1.7pt"><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mrow><mi>t</mi><mo>⁢</mo><mi>x</mi></mrow></mrow><mi>x</mi></mfrac></mpadded><mo>⁢</mo><mrow><mo>𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">getting  limits (<span class="ltx_text ltx_font_typewriter">http://planetmath.org/UpperLimit</span>).  We know (see the entry Laplace transform of sine and cosine) that</p>
+<table id="S0.Ex4" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex4.m1" class="ltx_Math" alttext="\mathcal{L}\left\{\frac{\sin{tx}}{x}\right\}\;=\;\frac{1}{s^{2}+x^{2}}." display="block"><mrow><mrow><mrow><mi class="ltx_font_mathcaligraphic">ℒ</mi><mo>⁢</mo><mrow><mo>{</mo><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mrow><mi>t</mi><mo>⁢</mo><mi>x</mi></mrow></mrow><mi>x</mi></mfrac><mo rspace="5.3pt">}</mo></mrow></mrow><mo rspace="5.3pt">=</mo><mfrac><mn>1</mn><mrow><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">This transformation formula can be integrated with respect to the parametre <math id="S0.SS1.p1.m1" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math>:</p>
+<table id="S0.Ex5" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex5.m1" class="ltx_Math" alttext="\mathcal{L}\left\{\int_{0}^{1}\frac{\sin{tx}}{x}\,dx\right\}\;=\;\int_{0}^{1}%
+\!\frac{1}{s^{2}+x^{2}}\,dx\;=\;\frac{1}{s}\operatornamewithlimits{\Big{/}}_{%
+\!\!\!x=0}^{\,\quad 1}\;\arctan\frac{x}{s}\;=\;\frac{1}{s}\arctan\frac{1}{s}." display="block"><mrow><mrow><mrow><mi class="ltx_font_mathcaligraphic">ℒ</mi><mo>⁢</mo><mrow><mo>{</mo><mrow><msubsup><mo largeop="true" symmetric="true">∫</mo><mn>0</mn><mn>1</mn></msubsup><mrow><mpadded width="+1.7pt"><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mrow><mi>t</mi><mo>⁢</mo><mi>x</mi></mrow></mrow><mi>x</mi></mfrac></mpadded><mo>⁢</mo><mrow><mo>𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo rspace="5.3pt">}</mo></mrow></mrow><mo rspace="5.3pt">=</mo><mrow><mpadded width="-1.7pt"><msubsup><mo largeop="true" symmetric="true">∫</mo><mn>0</mn><mn>1</mn></msubsup></mpadded><mrow><mpadded width="+1.7pt"><mfrac><mn>1</mn><mrow><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac></mpadded><mo>⁢</mo><mrow><mo>𝑑</mo><mpadded width="+2.8pt"><mi>x</mi></mpadded></mrow></mrow></mrow><mo rspace="5.3pt">=</mo><mrow><mfrac><mn>1</mn><mi>s</mi></mfrac><mo>⁢</mo><mrow><mrow><mpadded width="+2.8pt"><munderover><mo mathsize="160%" movablelimits="false" stretchy="false">/</mo><mrow><mpadded lspace="-5pt" width="-5pt"><mi>x</mi></mpadded><mo>=</mo><mn>0</mn></mrow><mpadded lspace="11.7pt" width="+11.7pt"><mn>1</mn></mpadded></munderover></mpadded><mo>⁡</mo><mi>arctan</mi></mrow><mo>⁡</mo><mpadded width="+2.8pt"><mfrac><mi>x</mi><mi>s</mi></mfrac></mpadded></mrow></mrow><mo rspace="5.3pt">=</mo><mrow><mfrac><mn>1</mn><mi>s</mi></mfrac><mo>⁢</mo><mrow><mi>arctan</mi><mo>⁡</mo><mfrac><mn>1</mn><mi>s</mi></mfrac></mrow></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">Thus we have the transformation formula of the sinus integralis:</p>
+<table id="S0.EGx1" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="S0.E1"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S0.E1.m1" class="ltx_Math" alttext="\displaystyle\mathcal{L}\left\{\mathrm{Si}\,t\right\}\;=\;\frac{1}{s}\arctan%
+\frac{1}{s}." display="inline"><mrow><mrow><mrow><mi class="ltx_font_mathcaligraphic">ℒ</mi><mo>⁢</mo><mrow><mo>{</mo><mrow><mpadded width="+1.7pt"><mi>Si</mi></mpadded><mo>⁢</mo><mi>t</mi></mrow><mo rspace="5.3pt">}</mo></mrow></mrow><mo rspace="5.3pt">=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>s</mi></mfrac></mstyle><mo>⁢</mo><mrow><mi>arctan</mi><mo>⁡</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>s</mi></mfrac></mstyle></mrow></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1)</span></td>
+</tr></tbody>
+</table>
+</div>
+</section>
+<section id="S0.SS2" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">0.2 </span>Laplace transform of sinc function</h2>
+
+<div id="S0.SS2.p1" class="ltx_para">
+<p class="ltx_p">By the formula  <math id="S0.SS2.p1.m1" class="ltx_Math" alttext="\mathcal{L}\{f^{\prime}\}=s\mathcal{L}\{f\}-\lim_{x\to 0+}f(x)" display="inline"><mrow><mrow><mi class="ltx_font_mathcaligraphic">ℒ</mi><mo>⁢</mo><mrow><mo stretchy="false">{</mo><msup><mi>f</mi><mo>′</mo></msup><mo stretchy="false">}</mo></mrow></mrow><mo>=</mo><mrow><mrow><mi>s</mi><mo>⁢</mo><mi class="ltx_font_mathcaligraphic">ℒ</mi><mo>⁢</mo><mrow><mo stretchy="false">{</mo><mi>f</mi><mo stretchy="false">}</mo></mrow></mrow><mo>-</mo><mrow><msub><mo>lim</mo><mrow><mi>x</mi><mo>→</mo><mrow><mn>0</mn><mo>+</mo></mrow></mrow></msub><mo>⁡</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></mrow></math>  of the parent (<span class="ltx_text ltx_font_typewriter">http://planetmath.org/LaplaceTransform</span>) entry,
+we obtain as consequence of (1), that</p>
+<table id="S0.Ex6" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex6.m1" class="ltx_Math" alttext="\mathcal{L}\left\{\frac{d}{dt}\mathrm{Si}\,t\right\}\;=\;s\cdot\frac{1}{s}%
+\arctan\frac{1}{s}-\mathrm{Si}\,0," display="block"><mrow><mrow><mrow><mi class="ltx_font_mathcaligraphic">ℒ</mi><mo>⁢</mo><mrow><mo>{</mo><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mo>⁢</mo><mi>t</mi></mrow></mfrac><mo>⁢</mo><mpadded width="+1.7pt"><mi>Si</mi></mpadded><mo>⁢</mo><mi>t</mi></mrow><mo rspace="5.3pt">}</mo></mrow></mrow><mo rspace="5.3pt">=</mo><mrow><mrow><mrow><mi>s</mi><mo>⋅</mo><mfrac><mn>1</mn><mi>s</mi></mfrac></mrow><mo>⁢</mo><mrow><mi>arctan</mi><mo>⁡</mo><mfrac><mn>1</mn><mi>s</mi></mfrac></mrow></mrow><mo>-</mo><mrow><mi>Si</mi><mo>⁢</mo><mn> 0</mn></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">i.e.
+</p>
+<table id="S0.EGx2" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="S0.E2"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S0.E2.m1" class="ltx_Math" alttext="\displaystyle\mathcal{L}\left\{\frac{\sin{t}}{t}\right\}\;=\;\arctan\frac{1}{s}." display="inline"><mrow><mrow><mrow><mi class="ltx_font_mathcaligraphic">ℒ</mi><mo>⁢</mo><mrow><mo>{</mo><mstyle displaystyle="true"><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mi>t</mi></mrow><mi>t</mi></mfrac></mstyle><mo rspace="5.3pt">}</mo></mrow></mrow><mo rspace="5.3pt">=</mo><mrow><mi>arctan</mi><mo>⁡</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>s</mi></mfrac></mstyle></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="S0.SS2.p2" class="ltx_para">
+<p class="ltx_p">The formula (2) may be determined also directly using the definition of Laplace transform.  Take an additional parametre <math id="S0.SS2.p2.m1" class="ltx_Math" alttext="a" display="inline"><mi>a</mi></math> to the defining integral</p>
+<table id="S0.Ex7" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex7.m1" class="ltx_Math" alttext="\mathcal{L}\{\frac{\sin{t}}{t}\}\;=\;\int_{0}^{\infty}e^{-st}\,\frac{\sin t}{t%
+}\,dt" display="block"><mrow><mrow><mi class="ltx_font_mathcaligraphic">ℒ</mi><mo>⁢</mo><mrow><mo stretchy="false">{</mo><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mi>t</mi></mrow><mi>t</mi></mfrac><mo rspace="5.3pt" stretchy="false">}</mo></mrow></mrow><mo rspace="5.3pt">=</mo><mrow><msubsup><mo largeop="true" symmetric="true">∫</mo><mn>0</mn><mi mathvariant="normal">∞</mi></msubsup><mrow><mpadded width="+1.7pt"><msup><mi>e</mi><mrow><mo>-</mo><mrow><mi>s</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></msup></mpadded><mo>⁢</mo><mpadded width="+1.7pt"><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mi>t</mi></mrow><mi>t</mi></mfrac></mpadded><mo>⁢</mo><mrow><mo>𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">by setting</p>
+<table id="S0.Ex8" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex8.m1" class="ltx_Math" alttext="\int_{0}^{\infty}e^{-st}\,\frac{\sin{at}}{t}\,dt\;:=\;\varphi(a)." display="block"><mrow><mrow><mrow><msubsup><mo largeop="true" symmetric="true">∫</mo><mn>0</mn><mi mathvariant="normal">∞</mi></msubsup><mrow><mpadded width="+1.7pt"><msup><mi>e</mi><mrow><mo>-</mo><mrow><mi>s</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></msup></mpadded><mo>⁢</mo><mpadded width="+1.7pt"><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mrow><mi>a</mi><mo>⁢</mo><mi>t</mi></mrow></mrow><mi>t</mi></mfrac></mpadded><mo>⁢</mo><mrow><mo>𝑑</mo><mpadded width="+2.8pt"><mi>t</mi></mpadded></mrow></mrow></mrow><mo rspace="5.3pt">:=</mo><mrow><mi>φ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">Now we have the derivative  <math id="S0.SS2.p2.m2" class="ltx_Math" alttext="\varphi^{\prime}(a)=\int_{0}^{\infty}e^{-st}\cos{at}\,dt" display="inline"><mrow><mrow><msup><mi>φ</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msubsup><mo largeop="true" symmetric="true">∫</mo><mn>0</mn><mi mathvariant="normal">∞</mi></msubsup><mrow><msup><mi>e</mi><mrow><mo>-</mo><mrow><mi>s</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></msup><mo>⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mi>a</mi><mo>⁢</mo><mpadded width="+1.7pt"><mi>t</mi></mpadded><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></mrow></mrow></mrow></math>,  where one can partially integrate twice, getting</p>
+<table id="S0.Ex9" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex9.m1" class="ltx_Math" alttext="\varphi^{\prime}(a)\;=\;\int_{0}^{\infty}e^{-st}\cos{at}\,dt\;=\;\frac{1}{s}-%
+\frac{a^{2}}{s^{2}}\int_{0}^{\infty}e^{-st}\cos{at}\,dt." display="block"><mrow><mrow><mrow><msup><mi>φ</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo rspace="5.3pt" stretchy="false">)</mo></mrow></mrow><mo rspace="5.3pt">=</mo><mrow><msubsup><mo largeop="true" symmetric="true">∫</mo><mn>0</mn><mi mathvariant="normal">∞</mi></msubsup><mrow><msup><mi>e</mi><mrow><mo>-</mo><mrow><mi>s</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></msup><mo>⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mi>a</mi><mo>⁢</mo><mpadded width="+1.7pt"><mi>t</mi></mpadded><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mpadded width="+2.8pt"><mi>t</mi></mpadded></mrow></mrow></mrow></mrow><mo rspace="5.3pt">=</mo><mrow><mfrac><mn>1</mn><mi>s</mi></mfrac><mo>-</mo><mrow><mfrac><msup><mi>a</mi><mn>2</mn></msup><msup><mi>s</mi><mn>2</mn></msup></mfrac><mo>⁢</mo><mrow><msubsup><mo largeop="true" symmetric="true">∫</mo><mn>0</mn><mi mathvariant="normal">∞</mi></msubsup><mrow><msup><mi>e</mi><mrow><mo>-</mo><mrow><mi>s</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></msup><mo>⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mi>a</mi><mo>⁢</mo><mpadded width="+1.7pt"><mi>t</mi></mpadded><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></mrow></mrow></mrow></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">Thus we solve</p>
+<table id="S0.Ex10" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex10.m1" class="ltx_Math" alttext="\int_{0}^{\infty}e^{-st}\cos{at}\,dt\;=\;\frac{\frac{1}{s}}{1+\left(\frac{a}{s%
+}\right)^{2}}\;=\;\varphi^{\prime}(a)," display="block"><mrow><mrow><mrow><msubsup><mo largeop="true" symmetric="true">∫</mo><mn>0</mn><mi mathvariant="normal">∞</mi></msubsup><mrow><msup><mi>e</mi><mrow><mo>-</mo><mrow><mi>s</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></msup><mo>⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mi>a</mi><mo>⁢</mo><mpadded width="+1.7pt"><mi>t</mi></mpadded><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mpadded width="+2.8pt"><mi>t</mi></mpadded></mrow></mrow></mrow></mrow><mo rspace="5.3pt">=</mo><mpadded width="+2.8pt"><mfrac><mfrac><mn>1</mn><mi>s</mi></mfrac><mrow><mn>1</mn><mo>+</mo><msup><mrow><mo>(</mo><mfrac><mi>a</mi><mi>s</mi></mfrac><mo>)</mo></mrow><mn>2</mn></msup></mrow></mfrac></mpadded><mo rspace="5.3pt">=</mo><mrow><msup><mi>φ</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">and since  <math id="S0.SS2.p2.m3" class="ltx_Math" alttext="\varphi(0)=0" display="inline"><mrow><mrow><mi>φ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math>, we obtain  <math id="S0.SS2.p2.m4" class="ltx_Math" alttext="\displaystyle\varphi(a)=\arctan\frac{a}{s}" display="inline"><mrow><mrow><mi>φ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>arctan</mi><mo>⁡</mo><mstyle displaystyle="true"><mfrac><mi>a</mi><mi>s</mi></mfrac></mstyle></mrow></mrow></math>.  This yields</p>
+<table id="S0.Ex11" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex11.m1" class="ltx_Math" alttext="\int_{0}^{\infty}e^{-st}\,\frac{\sin t}{t}\,dt\;=\;\varphi(1)\;=\;\arctan\frac%
+{1}{s}," display="block"><mrow><mrow><mrow><msubsup><mo largeop="true" symmetric="true">∫</mo><mn>0</mn><mi mathvariant="normal">∞</mi></msubsup><mrow><mpadded width="+1.7pt"><msup><mi>e</mi><mrow><mo>-</mo><mrow><mi>s</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></msup></mpadded><mo>⁢</mo><mpadded width="+1.7pt"><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mi>t</mi></mrow><mi>t</mi></mfrac></mpadded><mo>⁢</mo><mrow><mo>𝑑</mo><mpadded width="+2.8pt"><mi>t</mi></mpadded></mrow></mrow></mrow><mo rspace="5.3pt">=</mo><mrow><mi>φ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo rspace="5.3pt" stretchy="false">)</mo></mrow></mrow><mo rspace="5.3pt">=</mo><mrow><mi>arctan</mi><mo>⁡</mo><mfrac><mn>1</mn><mi>s</mi></mfrac></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">i.e. the formula (2).</p>
+</div>
+<div id="S0.SS2.p3" class="ltx_para">
+<p class="ltx_p">Formula (2) is derived here (<span class="ltx_text ltx_font_typewriter">http://planetmath.org/LaplaceTransformOfFracftt</span>) in a third way.
+</p>
+<table class="ltx_tabular ltx_align_right ltx_guessed_headers ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l ltx_border_t">Title</th>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">Laplace transform of sine integral</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Canonical name</th>
+<td class="ltx_td ltx_align_left ltx_border_r">LaplaceTransformOfSineIntegral</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Date of creation</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2014-11-07 15:36:06</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified on</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2014-11-07 15:36:06</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Owner</th>
+<td class="ltx_td ltx_align_left ltx_border_r">pahio (2872)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified by</th>
+<td class="ltx_td ltx_align_left ltx_border_r">pahio (2872)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Numerical id</th>
+<td class="ltx_td ltx_align_left ltx_border_r">15</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Author</th>
+<td class="ltx_td ltx_align_left ltx_border_r">pahio (2872)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Entry type</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Example</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 44A10</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Synonym</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Laplace transform of sinc function</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Related topic</th>
+<td class="ltx_td ltx_align_left ltx_border_r">SubstitutionNotation</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Related topic</th>
+<td class="ltx_td ltx_align_left ltx_border_r">SincFunction</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Related topic</th>
+<td class="ltx_td ltx_align_left ltx_border_r">TableOfLaplaceTransforms</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_l">Related topic</th>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">SineIntegral</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Fri Feb  9 21:32:28 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

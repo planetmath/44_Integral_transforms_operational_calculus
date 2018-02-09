@@ -1,0 +1,116 @@
+<!DOCTYPE html><html>
+<head>
+<title>Proof of Fekete’s subadditive lemma</title>
+<!--Generated on Fri Feb  9 21:32:43 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">Proof of Fekete’s subadditive lemma</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break">
+<p class="ltx_p">If there is a <math id="p1.m1" class="ltx_Math" alttext="m" display="inline"><mi>m</mi></math> such that <math id="p1.m2" class="ltx_Math" alttext="a_{m}=-\infty" display="inline"><mrow><msub><mi>a</mi><mi>m</mi></msub><mo>=</mo><mrow><mo>-</mo><mi mathvariant="normal">∞</mi></mrow></mrow></math>, then, by subadditivity, we have <math id="p1.m3" class="ltx_Math" alttext="a_{n}=-\infty" display="inline"><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mrow><mo>-</mo><mi mathvariant="normal">∞</mi></mrow></mrow></math> for all <math id="p1.m4" class="ltx_Math" alttext="n&gt;m" display="inline"><mrow><mi>n</mi><mo>&gt;</mo><mi>m</mi></mrow></math>. Then, both sides of the equality are <math id="p1.m5" class="ltx_Math" alttext="-\infty" display="inline"><mrow><mo>-</mo><mi mathvariant="normal">∞</mi></mrow></math>, and the theorem holds.
+So, we suppose that <math id="p1.m6" class="ltx_Math" alttext="a_{n}\in\textbf{R}" display="inline"><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>∈</mo><mtext>𝐑</mtext></mrow></math> for all <math id="p1.m7" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math>. Let <math id="p1.m8" class="ltx_Math" alttext="L=\inf_{n}\frac{a_{n}}{n}" display="inline"><mrow><mi>L</mi><mo>=</mo><mrow><msub><mo>inf</mo><mi>n</mi></msub><mo>⁡</mo><mfrac><msub><mi>a</mi><mi>n</mi></msub><mi>n</mi></mfrac></mrow></mrow></math> and let <math id="p1.m9" class="ltx_Math" alttext="B" display="inline"><mi>B</mi></math> be any number greater than <math id="p1.m10" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math>. Choose <math id="p1.m11" class="ltx_Math" alttext="k\geq 1" display="inline"><mrow><mi>k</mi><mo>≥</mo><mn>1</mn></mrow></math> such that</p>
+<table id="S0.Ex1" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex1.m1" class="ltx_Math" alttext="\frac{a_{k}}{k}&lt;B" display="block"><mrow><mfrac><msub><mi>a</mi><mi>k</mi></msub><mi>k</mi></mfrac><mo>&lt;</mo><mi>B</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">For <math id="p1.m12" class="ltx_Math" alttext="n&gt;k" display="inline"><mrow><mi>n</mi><mo>&gt;</mo><mi>k</mi></mrow></math>, we have, by the division algorithm there are integers <math id="p1.m13" class="ltx_Math" alttext="p_{n}" display="inline"><msub><mi>p</mi><mi>n</mi></msub></math> and <math id="p1.m14" class="ltx_Math" alttext="q_{n}" display="inline"><msub><mi>q</mi><mi>n</mi></msub></math> such that <math id="p1.m15" class="ltx_Math" alttext="n=p_{n}k+q_{n}" display="inline"><mrow><mi>n</mi><mo>=</mo><mrow><mrow><msub><mi>p</mi><mi>n</mi></msub><mo>⁢</mo><mi>k</mi></mrow><mo>+</mo><msub><mi>q</mi><mi>n</mi></msub></mrow></mrow></math>, and <math id="p1.m16" class="ltx_Math" alttext="0\leq q_{n}\leq k-1" display="inline"><mrow><mn>0</mn><mo>≤</mo><msub><mi>q</mi><mi>n</mi></msub><mo>≤</mo><mrow><mi>k</mi><mo>-</mo><mn>1</mn></mrow></mrow></math>.
+Applying the definition of subadditivity many times we obtain:</p>
+<table id="S0.Ex2" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex2.m1" class="ltx_Math" alttext="a_{n}=a_{p_{n}k+q_{n}}\leq a_{p_{n}k}+a_{q_{n}}\leq p_{n}a_{k}+a_{q_{n}}" display="block"><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msub><mi>a</mi><mrow><mrow><msub><mi>p</mi><mi>n</mi></msub><mo>⁢</mo><mi>k</mi></mrow><mo>+</mo><msub><mi>q</mi><mi>n</mi></msub></mrow></msub><mo>≤</mo><mrow><msub><mi>a</mi><mrow><msub><mi>p</mi><mi>n</mi></msub><mo>⁢</mo><mi>k</mi></mrow></msub><mo>+</mo><msub><mi>a</mi><msub><mi>q</mi><mi>n</mi></msub></msub></mrow><mo>≤</mo><mrow><mrow><msub><mi>p</mi><mi>n</mi></msub><mo>⁢</mo><msub><mi>a</mi><mi>k</mi></msub></mrow><mo>+</mo><msub><mi>a</mi><msub><mi>q</mi><mi>n</mi></msub></msub></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">So, dividing by <math id="p1.m17" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> we obtain:</p>
+<table id="S0.Ex3" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex3.m1" class="ltx_Math" alttext="\frac{a_{n}}{n}\leq\frac{p_{n}k}{n}\frac{a_{k}}{k}+\frac{a_{q_{n}}}{n}" display="block"><mrow><mfrac><msub><mi>a</mi><mi>n</mi></msub><mi>n</mi></mfrac><mo>≤</mo><mrow><mrow><mfrac><mrow><msub><mi>p</mi><mi>n</mi></msub><mo>⁢</mo><mi>k</mi></mrow><mi>n</mi></mfrac><mo>⁢</mo><mfrac><msub><mi>a</mi><mi>k</mi></msub><mi>k</mi></mfrac></mrow><mo>+</mo><mfrac><msub><mi>a</mi><msub><mi>q</mi><mi>n</mi></msub></msub><mi>n</mi></mfrac></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">When <math id="p1.m18" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> goes to infinity, <math id="p1.m19" class="ltx_Math" alttext="\frac{p_{n}k}{n}" display="inline"><mfrac><mrow><msub><mi>p</mi><mi>n</mi></msub><mo>⁢</mo><mi>k</mi></mrow><mi>n</mi></mfrac></math> converges to <math id="p1.m20" class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math> and <math id="p1.m21" class="ltx_Math" alttext="\frac{a_{q_{n}}}{n}" display="inline"><mfrac><msub><mi>a</mi><msub><mi>q</mi><mi>n</mi></msub></msub><mi>n</mi></mfrac></math> converges to zero, because the numerator is bounded by the maximum of <math id="p1.m22" class="ltx_Math" alttext="a_{i}" display="inline"><msub><mi>a</mi><mi>i</mi></msub></math> with <math id="p1.m23" class="ltx_Math" alttext="0\leq i\leq k-1" display="inline"><mrow><mn>0</mn><mo>≤</mo><mi>i</mi><mo>≤</mo><mrow><mi>k</mi><mo>-</mo><mn>1</mn></mrow></mrow></math>. So, we have, for all <math id="p1.m24" class="ltx_Math" alttext="B&gt;L" display="inline"><mrow><mi>B</mi><mo>&gt;</mo><mi>L</mi></mrow></math>:</p>
+<table id="S0.Ex4" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex4.m1" class="ltx_Math" alttext="L\leq\lim_{n}\frac{a_{n}}{n}\leq\frac{a_{k}}{k}&lt;B" display="block"><mrow><mi>L</mi><mo>≤</mo><mrow><munder><mo movablelimits="false">lim</mo><mi>n</mi></munder><mo>⁡</mo><mfrac><msub><mi>a</mi><mi>n</mi></msub><mi>n</mi></mfrac></mrow><mo>≤</mo><mfrac><msub><mi>a</mi><mi>k</mi></msub><mi>k</mi></mfrac><mo>&lt;</mo><mi>B</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">Finally, let <math id="p1.m25" class="ltx_Math" alttext="B" display="inline"><mi>B</mi></math> go to <math id="p1.m26" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> and we obtain</p>
+<table id="S0.Ex5" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex5.m1" class="ltx_Math" alttext="L=\inf_{n}\frac{a_{n}}{n}=\lim_{n}\frac{a_{n}}{n}" display="block"><mrow><mi>L</mi><mo>=</mo><mrow><munder><mo movablelimits="false">inf</mo><mi>n</mi></munder><mo>⁡</mo><mfrac><msub><mi>a</mi><mi>n</mi></msub><mi>n</mi></mfrac></mrow><mo>=</mo><mrow><munder><mo movablelimits="false">lim</mo><mi>n</mi></munder><mo>⁡</mo><mfrac><msub><mi>a</mi><mi>n</mi></msub><mi>n</mi></mfrac></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<table class="ltx_tabular ltx_align_right ltx_guessed_headers ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l ltx_border_t">Title</th>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">Proof of Fekete’s subadditive lemma</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Canonical name</th>
+<td class="ltx_td ltx_align_left ltx_border_r">ProofOfFeketesSubadditiveLemma</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Date of creation</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2014-03-18 14:41:50</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified on</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2014-03-18 14:41:50</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Owner</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Filipe (28191)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified by</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Filipe (28191)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Numerical id</th>
+<td class="ltx_td ltx_align_left ltx_border_r">3</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Author</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Filipe (28191)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_l">Entry type</th>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">Proof</td>
+</tr>
+</tbody>
+</table>
+</div>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Fri Feb  9 21:32:43 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>
